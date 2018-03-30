@@ -1,0 +1,76 @@
+
+a.navbar-item, a.is-active {
+    color: #666!important
+}
+
+#port-logo {
+    background: none!important
+}
+
+
+.navbar-brand a {
+    margin: 50px 0px 0px 25px;
+    padding: 0;
+}
+
+.navbar-burger {
+    margin: 65px 45px 0px 40px;
+}
+
+.menu {
+    padding: 0px 40px;
+}
+
+.menu-list li {
+    display: inline-block;
+}
+
+.menu-list a {
+    display: inline-block;
+}
+
+.menu-link {
+    color: #666;
+    text-decoration: none;
+}
+
+.menu-link::after {
+    margin-top: 4px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: width .3s;
+}
+
+.menu-link:hover::after {
+    width: 100%;
+}
+
+.active::after {
+    margin-top: 4px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #000;
+}
+
+.menu-divider {
+    content: "";
+    height: 16px;
+}
+
+.contact-icons {
+    padding-left: 10px;
+}
+
+.contact-icons a {
+    display: inline-block;
+    color: #666;
+}
+
+.contact-icon {
+    padding: 3px;
+}
