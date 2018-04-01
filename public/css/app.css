@@ -74,6 +74,11 @@ a.navbar-item, a.is-active {
 
 .contact-icon {
     padding: 3px;
+}
+
+.description {
+    padding: 16px 0px;
+    margin: 16px 0px;
 }/*--------------------------------
 
 port Web Font - built using nucleoapp.com

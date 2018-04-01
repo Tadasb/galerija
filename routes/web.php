@@ -33,3 +33,6 @@ Route::get('/kontaktai', 'HomeController@kontaktai')->name('kontaktai');
 
 //ADMIN routes
 Route::get('/admin', 'AdminController@dashboard')->name('admin.dashboard');
+Route::apiResource('/admin/art-shows', 'ArtShowController');
+Route::post('/admin/pictures', 'PictureController@store')->name('pictures.store');
+Route::delete('/admin/pictures/{picture}', 'PictureController@destroy')->name('pictures.delete');

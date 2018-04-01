@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ArtShow;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -19,7 +20,9 @@ class HomeController extends Controller
 
     public function parodos()
     {
-        return view('parodos');
+        $shows = ArtShow::all();
+
+        return view('parodos', compact('shows'));
     }
 
     public function menininkai()

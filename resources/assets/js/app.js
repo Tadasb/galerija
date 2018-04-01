@@ -23,7 +23,7 @@ Vue.use(elementUI)
  */
 
 Vue.component('admin-tabs', require('./components/admin-tabs.vue'));
-Vue.component('parodos', require('./components/parodos.vue'));
+Vue.component('art-shows', require('./components/art-shows.vue'));
 Vue.component('menininkai', require('./components/menininkai.vue'));
 Vue.component('renginiai', require('./components/renginiai.vue'));
 Vue.component('dizainas', require('./components/dizainas.vue'));
@@ -31,6 +31,9 @@ Vue.component('fotografija', require('./components/fotografija.vue'));
 Vue.component('dirbtuves', require('./components/dirbtuves.vue'));
 Vue.component('menu-ledai', require('./components/menu-ledai.vue'));
 Vue.component('kontaktai', require('./components/kontaktai.vue'));
+
+Vue.component('vue-table', require('./components/elements/table.vue'));
+Vue.component('photo-upload', require('./components/elements/photo-upload.vue'));
 
 const app = new Vue({
     el: '#app',

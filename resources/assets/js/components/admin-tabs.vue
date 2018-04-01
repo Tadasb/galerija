@@ -1,6 +1,7 @@
 <template>
     <el-tabs tab-position="top" style="padding-top: 30px" @tab-click="handleClick">
-        <el-tab-pane label="Parodos"><parodos v-if="activeTabIndex == 0"></parodos></el-tab-pane>
+
+        <el-tab-pane label="Parodos"><art-shows v-if="activeTabIndex == 0"></art-shows></el-tab-pane>
 
         <el-tab-pane label="Menininkai"><menininkai  v-if="activeTabIndex == 1"></menininkai></el-tab-pane>
 
@@ -15,6 +16,7 @@
         <el-tab-pane label="Menu / Ledai"><menu-ledai v-if="activeTabIndex == 6"></menu-ledai></el-tab-pane>
 
         <el-tab-pane label="Kontaktai"><kontaktai  v-if="activeTabIndex == 7"></kontaktai></el-tab-pane>
+        
     </el-tabs>
 </template>
 
