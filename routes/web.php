@@ -17,8 +17,6 @@ Auth::routes();
 //Homepage routes
 Route::get('/', 'HomeController@index')->name('index');
 
-Route::get('/apie-mus', 'HomeController@apie')->name('apie');
-
 Route::get('/parodos', 'HomeController@parodos')->name('parodos');
 
 Route::get('/menininkai', 'HomeController@menininkai')->name('menininkai');

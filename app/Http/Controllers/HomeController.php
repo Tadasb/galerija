@@ -18,11 +18,6 @@ class HomeController extends Controller
         return view('index');
     }
 
-    public function apie()
-    {
-        return view('apie');
-    }
-
     public function parodos()
     {
         $shows = ArtShow::all();

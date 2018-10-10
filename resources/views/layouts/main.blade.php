@@ -15,13 +15,13 @@
                         <img src="{{asset('portfolio-logo.svg')}}" alt="Portfolio galerija">
                     </a>
 
-                    <div class="navbar-burger" :class="{'is-active' : navbar_active}" @click="toggleNavbar()">
+                    <div class="navbar-burger is-hidden-tablet" :class="{'is-active' : navbar_active}" @click="toggleNavbar()">
                         <span></span>
                         <span></span>
                         <span></span>
                     </div>
                 </div>
-                <div class="navbar-menu" :class="{'is-active' : navbar_active}">
+                <div class="navbar-menu is-hidden-tablet is-hidden-desktop is-hidden-widescreen is-hidden-fullhd" :class="{'is-active' : navbar_active}">
                     <div class="navbar-start" style="text-align: center">
                         <a href="/parodos" class="navbar-item @if(Request::is('parodos') || Request::is('parodos/*')) is-active @endif">PARODOS</a>
                         <a href="/menininkai" class="navbar-item @if(Request::is('menininkai') || Request::is('menininkai/*')) is-active @endif">MENININKAI</a>
@@ -48,12 +48,9 @@
             </nav>
             <section class="section">
                 <div class="columns">
-{{--                     <div class="column is-4-tablet is-3-desktop is-3-widescreen is-3-fullhd is-hidden-mobile">
+                    <div class="column is-4-tablet is-3-desktop is-3-widescreen is-3-fullhd is-hidden-mobile">
                         <aside class="menu">
                           <ul class="menu-list">
-                            <li>
-                                <a href="/apie-mus" class="menu-link @if(Request::is('apie-mus') || Request::is('apie-mus')) active @endif"> <img src="{{asset('art-studio-cafe.svg')}}" alt="Art studio/cafe" style="height: 30px; width: 100%"></a>
-                            </li>
                             <li>
                                 <a href="/parodos" class="menu-link @if(Request::is('parodos') || Request::is('parodos/*')) active @endif">PARODOS</a>
                             </li><br>
@@ -89,7 +86,7 @@
                             </li><br>
                           </ul>
                         <div class="contact-icons">
-                            <a class="contact-link" href="tel:+37062768061"><i class="contact-icon port-icon port-phone-2"></i></a>
+                   {{--          <a class="contact-link" href="tel:+37062768061"><i class="contact-icon port-icon port-phone-2"></i></a> --}}
                             <a href="mailto:info@portfoliogalerija.lt"><i class="contact-icon port-icon port-email-83-2"></i></a>
                             <a href="https://goo.gl/maps/Ep7NFW9uCh42"><i class="contact-icon port-icon port-pin-3" target="_blank"></i></a>
                             <i class="contact-icon port-icon port-logo-instagram"></i>
@@ -109,7 +106,7 @@
                         </ul>
                         @endauth
                         </aside>
-                    </div> --}}
+                    </div>
                     <div class="column is-7-tablet is-8-desktop is-8-widescreen is-8-fullhd ">
                         @yield('content')
                     </div>
