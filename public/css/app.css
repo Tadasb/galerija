@@ -79,7 +79,9 @@ a.navbar-item, a.is-active {
 .description {
     padding: 16px 0px;
     margin: 16px 0px;
-}/*--------------------------------
+}
+
+[v-cloak] { display: none; }/*--------------------------------
 
 port Web Font - built using nucleoapp.com
 License - nucleoapp.com/license/

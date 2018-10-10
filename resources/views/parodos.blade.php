@@ -20,21 +20,22 @@
 				</h3>
 		    </div>
 
-{{-- 		    <div class="has-text-right">
+		    <div class="has-text-right">
 		    	<h3 class="title is-4">
 				    {{$show->starting_time ?? ''}}
 				</h3>
-		    </div> --}}
+		    </div>
 		</div>
 	</div>
-
-    <el-carousel indicator-position="none">
+	@if(count($show->data->pictures))
+    <el-carousel indicator-position="none" v-cloak>
     	@foreach($show->data->pictures as $picture)
       	<el-carousel-item>
         	<img class="image" src="{{$picture->url}}" alt="">
       	</el-carousel-item>
       	@endforeach
     </el-carousel>
+    @endif
 	
 	<p class="content is-medium">
 		{{ $show->description ?? ''}}

@@ -79,3 +79,5 @@ a.navbar-item, a.is-active {
     padding: 16px 0px;
     margin: 16px 0px;
 }
+
+[v-cloak] { display: none; }
