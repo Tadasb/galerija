@@ -11,15 +11,19 @@
         <div class="app" id="app">
             <nav class="navbar" role="navigation" aria-label="main navigation">
                 <div class="navbar-brand">
-                    <a class="navbar-item" href="/" id="port-logo">
+                    <a class="navbar-item" href="/" id="port-logo" style="justify-content: space-between;">
                         <img src="{{asset('portfolio-logo.svg')}}" alt="Portfolio galerija">
                     </a>
 
-                    <div class="navbar-burger is-hidden-tablet" :class="{'is-active' : navbar_active}" @click="toggleNavbar()">
+                    <div style="position: absolute; right: 3em;" class="navbar-burger is-hidden-tablet" :class="{'is-active' : navbar_active}" @click="toggleNavbar()">
                         <span></span>
                         <span></span>
                         <span></span>
                     </div>
+                    <br>
+
+                    <img class="is-inline is-invisible-mobile" style="margin-top: 8em; margin-right: 3em; position: absolute; right: 3em;"src="{{asset('esi-sukurtas-kad-kurtum.svg')}}" alt="esi sukurtas, kad kurtum">
+
                 </div>
                 <div class="navbar-menu is-hidden-tablet is-hidden-desktop is-hidden-widescreen is-hidden-fullhd" :class="{'is-active' : navbar_active}">
                     <div class="navbar-start" style="text-align: center">
@@ -29,7 +33,9 @@
                         <a href="/dizainas" class="navbar-item @if(Request::is('dizainas') || Request::is('dizainas/*')) is-active @endif">DIZAINAS</a>
                         <a href="/fotografija" class="navbar-item @if(Request::is('fotografija') || Request::is('fotografija/*')) is-active @endif">FOTOGRAFIJA</a>
                         <a href="/dirbtuves" class="navbar-item @if(Request::is('dirbtuves') || Request::is('dirbtuves/*')) is-active @endif">DIRBTUVES</a>
-                        <a href="/menu-ledai" class="navbar-item @if(Request::is('menu-ledai') || Request::is('menu-ledai/*')) is-active @endif">MENU / LEDAI</a>
+                        <a href="/meniu" class="navbar-item @if(Request::is('menu') || Request::is('menu/*')) is-active @endif">MENIU</a>
+                        <a href="/ledai" class="navbar-item @if(Request::is('ledai') || Request::is('ledai/*')) is-active @endif">LEDAI</a>
+                        <a href="/nuoma" class="navbar-item @if(Request::is('nuoma') || Request::is('nuoma/*')) is-active @endif">NUOMA</a>
                         <a href="/kontaktai" class="navbar-item @if(Request::is('kontaktai') || Request::is('kontaktai/*')) is-active @endif">KONTAKTAI</a>
                         <div class="contact-icons block" style="padding-top: 12px">
                             <a class="contact-link" href="tel:+37062768061"><i class="contact-icon port-icon port-phone-2"></i></a>
@@ -75,8 +81,16 @@
 
                             <div class="menu-divider"></div>
 
-                            <li>
-                                <a href="/menu-ledai" class="menu-link @if(Request::is('menu-ledai') || Request::is('menu-ledai/*')) active @endif">MENIU / LEDAI</a>
+                            <li style="padding-right: 50px">
+                                <a href="/meniu" class="menu-link @if(Request::is('meniu') || Request::is('meniu/*')) active @endif">MENIU</a>
+                            </li>
+
+                            <li style="padding-right: 50px"> 
+                                <a href="/ledai" class="menu-link @if(Request::is('ledai') || Request::is('ledai/*')) active @endif">LEDAI</a>
+                            </li>
+
+                            <li style="padding-right: 50px">
+                                <a href="/nuoma" class="menu-link @if(Request::is('nuoma') || Request::is('nuoma/*')) active @endif">NUOMA</a>
                             </li>
 
                             <div class="menu-divider"></div>
@@ -115,5 +129,6 @@
             </section>
         </div>
         <script src="{!! mix('js/app.js') !!}" type="text/javascript"></script>
+        @yield('scripts')
     </body>
 </html>

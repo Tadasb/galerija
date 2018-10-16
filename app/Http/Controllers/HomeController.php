@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Page;
 use App\ArtShow;
 use Illuminate\Http\Request;
 
@@ -50,9 +51,21 @@ class HomeController extends Controller
         return view('dirbtuves');
     }
 
-    public function menu()
+    public function meniu()
     {
-        return view('menu');
+        return view('meniu');
+    }
+
+    public function ledai()
+    {
+        return view('ledai');
+    }
+
+    public function nuoma()
+    {
+        $page = Page::firstOrCreate(['name' => 'nuoma']);
+
+        return view('nuoma', compact('page'));
     }
 
     public function kontaktai()

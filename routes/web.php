@@ -26,13 +26,26 @@ Route::get('/dizainas', 'HomeController@dizainas')->name('dizainas');
 Route::get('/fotografija', 'HomeController@fotografija')->name('fotografija');
 Route::get('/dirbtuves', 'HomeController@dirbtuves')->name('dirbtuves');
 
-Route::get('/menu-ledai', 'HomeController@menu')->name('menu');
+Route::get('/meniu', 'HomeController@meniu')->name('meniu');
+Route::get('/ledai', 'HomeController@ledai')->name('ledai');
+Route::get('/nuoma', 'HomeController@nuoma')->name('nuoma');
 
 Route::get('/kontaktai', 'HomeController@kontaktai')->name('kontaktai');
 
 
 //ADMIN routes
-Route::get('/admin', 'AdminController@dashboard')->name('admin.dashboard');
-Route::apiResource('/admin/art-shows', 'ArtShowController');
-Route::post('/admin/pictures', 'PictureController@store')->name('pictures.store');
-Route::delete('/admin/pictures/{picture}', 'PictureController@destroy')->name('pictures.delete');
+
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
+	Route::get('/', 'AdminController@dashboard')->name('dashboard');
+	Route::apiResource('/art-shows', 'ArtShowController');
+	Route::apiResource('/pages', 'PageController');
+	Route::post('/pictures', 'PictureController@store')->name('pictures.store');
+	Route::delete('/pictures/{picture}', 'PictureController@destroy')->name('pictures.delete');
+
+	Route::group(['prefix' => 'uploads', 'as' => 'uploads.'], function() {
+	    Route::post('/pictures', 'UploadController@storePicture')->name('pictures.store');
+	    Route::delete('/{id}', 'UploadController@delete')->name('delete');
+	});
+});
+
+

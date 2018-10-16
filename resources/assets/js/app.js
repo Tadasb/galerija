@@ -16,6 +16,11 @@ import 'element-ui/lib/theme-chalk/index.css'
 locale.use(lang)
 Vue.use(elementUI)
 
+import vuedrag from 'vuedraggable'
+Vue.component('draggable', require('vuedraggable'))
+
+Vue.use(require('v-img'))
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -29,11 +34,14 @@ Vue.component('renginiai', require('./components/renginiai.vue'));
 Vue.component('dizainas', require('./components/dizainas.vue'));
 Vue.component('fotografija', require('./components/fotografija.vue'));
 Vue.component('dirbtuves', require('./components/dirbtuves.vue'));
-Vue.component('menu-ledai', require('./components/menu-ledai.vue'));
+Vue.component('meniu', require('./components/meniu.vue'));
+Vue.component('ledai', require('./components/ledai.vue'));
+Vue.component('nuoma', require('./components/nuoma.vue'));
 Vue.component('kontaktai', require('./components/kontaktai.vue'));
 
 Vue.component('vue-table', require('./components/elements/table.vue'));
-Vue.component('photo-upload', require('./components/elements/photo-upload.vue'));
+Vue.component('image-upload', require('./components/elements/image-upload.vue'));
+Vue.component('multiple-image-upload', require('./components/elements/multiple-image-upload.vue'));
 
 const app = new Vue({
     el: '#app',

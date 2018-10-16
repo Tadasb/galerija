@@ -1,3 +1,6 @@
+navbar {
+    display: flex;
+}
 
 a.navbar-item, a.is-active {
     color: #666!important
@@ -6,6 +9,8 @@ a.navbar-item, a.is-active {
 #port-logo {
     background: none!important
 }
+
+[v-cloak] { display: none; }
 
 
 .navbar-brand a {
@@ -32,6 +37,7 @@ a.navbar-item, a.is-active {
 .menu-link {
     color: #666;
     text-decoration: none;
+    margin-right: 120px;
 }
 
 .menu-link::after {
@@ -78,4 +84,19 @@ a.navbar-item, a.is-active {
 .description {
     padding: 16px 0px;
     margin: 16px 0px;
+}
+
+.logo-slogan {
+    -webkit-flex: 1 100%;
+    -moz-flex: 1 100%;
+    -ms-flex: 1 100%;
+    flex: 1 100%;
+    justify-content: space-between;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
 }
