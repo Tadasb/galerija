@@ -32,13 +32,10 @@ Vue.component('art-shows', require('./components/art-shows.vue'));
 Vue.component('menininkai', require('./components/menininkai.vue'));
 Vue.component('renginiai', require('./components/renginiai.vue'));
 Vue.component('dizainas', require('./components/dizainas.vue'));
-Vue.component('fotografija', require('./components/fotografija.vue'));
 Vue.component('dirbtuves', require('./components/dirbtuves.vue'));
-Vue.component('meniu', require('./components/meniu.vue'));
-Vue.component('ledai', require('./components/ledai.vue'));
-Vue.component('nuoma', require('./components/nuoma.vue'));
 Vue.component('kontaktai', require('./components/kontaktai.vue'));
 
+Vue.component('page', require('./components/page.vue'));
 Vue.component('vue-table', require('./components/elements/table.vue'));
 Vue.component('image-upload', require('./components/elements/image-upload.vue'));
 Vue.component('multiple-image-upload', require('./components/elements/multiple-image-upload.vue'));

@@ -43,7 +43,9 @@ class HomeController extends Controller
 
     public function fotografija()
     {
-        return view('fotografija');
+        $page = Page::firstOrCreate(['name' => 'fotografija']);
+
+        return view('fotografija', compact('page'));
     }
 
     public function dirbtuves()
@@ -53,12 +55,16 @@ class HomeController extends Controller
 
     public function meniu()
     {
-        return view('meniu');
+        $page = Page::firstOrCreate(['name' => 'meniu']);
+
+        return view('meniu', compact('page'));
     }
 
     public function ledai()
     {
-        return view('ledai');
+        $page = Page::firstOrCreate(['name' => 'ledai']);
+
+        return view('ledai', compact('page'));
     }
 
     public function nuoma()
