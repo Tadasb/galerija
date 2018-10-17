@@ -2,7 +2,7 @@
 
 @section('content')
 
-@foreach($shows as $show)
+{{-- @foreach($shows as $show)
 	<div class="columns">
 		<div class="column ">
 			<h1 class="title is-8-tablet is-9-desktop is-10-fullhd">{{ $show->name ?? ''}}</h1>
@@ -20,11 +20,11 @@
 				</h3>
 		    </div>
 
-{{-- 		    <div class="has-text-right">
+		    <div class="has-text-right">
 		    	<h3 class="title is-4">
 				    {{$show->starting_time ?? ''}}
 				</h3>
-		    </div> --}}
+		    </div>
 		</div>
 	</div>
 
@@ -40,6 +40,6 @@
 		{{ $show->description ?? ''}}
 	</p>
 
-@endforeach
+@endforeach --}}
 
 @endsection

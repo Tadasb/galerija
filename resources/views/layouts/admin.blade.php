@@ -14,7 +14,7 @@
                     <div class="columns">
                         <div class="column is-2">
                             <a class="" href="/" id="port-logo">
-                                <img src="{{asset('portfolio-logo.svg')}}" alt="Portfolio galerija" style="padding: 15px;">
+                                <img src="/storage/portfolio-logo.svg" alt="Portfolio galerija" style="padding: 15px;">
                             </a>
                             @auth
                             <div class="has-text-centered">
