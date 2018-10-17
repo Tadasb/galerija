@@ -68461,7 +68461,10 @@ var render = function() {
         [
           _vm.editing
             ? _c("multiple-image-upload", {
-                attrs: { images: _vm.page.data.images, image_type: "nuoma" }
+                attrs: {
+                  images: _vm.page.data.images,
+                  image_type: _vm.page_name
+                }
               })
             : _c(
                 "div",

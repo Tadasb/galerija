@@ -14,7 +14,7 @@
 
 	@foreach($page->data->images as $image)
 	<div class="col">
-		<img v-img:nuoma src="{{env('APP_URL') . $image->url}}" alt="">
+		<img v-img:nuoma src="{{asset($image->path)}}" alt="">
 	</div>
 	@endforeach
 </div>

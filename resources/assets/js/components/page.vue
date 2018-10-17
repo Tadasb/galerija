@@ -14,7 +14,7 @@
         </div>
         <div class="row p-3">
             <div class="col">
-                <multiple-image-upload v-if="editing" :images="page.data.images" :image_type="'nuoma'"></multiple-image-upload>
+                <multiple-image-upload v-if="editing" :images="page.data.images" :image_type="page_name"></multiple-image-upload>
                 <div v-else class="row">
                     <div v-for="image in page.data.images" class="col-sm-3">
                         <img class="img-fluid" v-img :src="image.url" alt="">
