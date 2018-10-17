@@ -12,7 +12,7 @@
             <nav class="navbar" role="navigation" aria-label="main navigation">
                 <div class="navbar-brand">
                     <a class="navbar-item" href="/" id="port-logo" style="justify-content: space-between;">
-                        <img src="{{asset('portfolio-logo.svg')}}" alt="Portfolio galerija">
+                        <img src="/storage/portfolio-logo.svg" alt="Portfolio galerija">
                     </a>
 
                     <div style="position: absolute; right: 3em;" class="navbar-burger is-hidden-tablet" :class="{'is-active' : navbar_active}" @click="toggleNavbar()">
@@ -22,7 +22,7 @@
                     </div>
                     <br>
 
-                    <img class="is-inline is-invisible-mobile" style="margin-top: 8em; margin-right: 3em; position: absolute; right: 3em;"src="{{asset('esi-sukurtas-kad-kurtum.svg')}}" alt="esi sukurtas, kad kurtum">
+                    <img class="is-inline is-invisible-mobile" style="margin-top: 8em; margin-right: 3em; position: absolute; right: 3em;"src="/storage/esi-sukurtas-kad-kurtum.svg" alt="esi sukurtas, kad kurtum">
 
                 </div>
                 <div class="navbar-menu is-hidden-tablet is-hidden-desktop is-hidden-widescreen is-hidden-fullhd" :class="{'is-active' : navbar_active}">
