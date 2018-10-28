@@ -13,7 +13,7 @@
 
 	@foreach($page->data->images as $image)
 	<div class="col">
-		<img v-img:nuoma src="/storage/{{$image->url}}" alt="">
+		<img v-img:nuoma src="{{$image->url}}" alt="">
 	</div>
 	@endforeach
 </div>
