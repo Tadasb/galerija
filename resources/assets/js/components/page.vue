@@ -10,16 +10,17 @@
             <div class="col">
                 <label for=""><strong>Tekstas</strong></label>
                 <medium-editor v-if="editing" :text='page.data.text' @edit="processEditOperation($event, page.data)"/>
-                <div v-if="page.data.text" v-html="page.data.text"></div>
-                <div v-else>-</div>
+                <div v-else v-html="page.data.text"></div>
             </div>
         </div>
         <div class="row p-3">
             <div class="col">
                 <label for=""><strong>Trumpas aprašymas (būtina dėl SEO)</strong></label>
                 <el-input v-if="editing" v-model="page.data.short_description" size="medium" class="pb-2"></el-input>
-                <div v-if="page.data.short_description">{{page.data.short_description}}</div>
-                <div v-else>-</div>
+                <div v-else>
+                    <div v-if="page.data.short_description">{{page.data.short_description}}</div>
+                    <div v-else>-</div>
+                </div>
             </div>
         </div>
         <div class="row p-3">
