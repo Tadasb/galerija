@@ -15,6 +15,12 @@
         </div>
         <div class="row p-3">
             <div class="col">
+                <label for=""><strong>Trumpas aprašymas (būtina dėl SEO)</strong></label>
+                <el-input v-model="page.data.short_description" size="medium" class="pb-2"></el-input>
+            </div>
+        </div>
+        <div class="row p-3">
+            <div class="col">
                 <label for=""><strong>Nuotraukos</strong></label>
                 <multiple-image-upload v-if="editing" :images="page.data.images" :image_type="page_name"></multiple-image-upload>
                 <div v-else class="row">
@@ -52,7 +58,7 @@ export default {
 
     data() {
         return {
-            page: { id: null, name: null, data: { images: [], text: null, og_image: null } },
+            page: { id: null, name: null, data: { images: [], text: null, og_image: null, short_description: null } },
             editing: false,
         }
     },
