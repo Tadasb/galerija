@@ -1,4 +1,4 @@
-navbar {
+@import url(https://cdnjs.cloudflare.com/ajax/libs/medium-editor/5.22.1/css/medium-editor.css);@import url(https://cdnjs.cloudflare.com/ajax/libs/medium-editor/5.22.1/css/themes/beagle.css);navbar {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -102,28 +102,34 @@ a.navbar-item, a.is-active {
 input:focus,
 select:focus,
 textarea:focus,
-button:focus {
+button:focus,
+.medium-editor-element:focus {
     outline: none;
+}
+
+.medium-editor-element {
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    padding: 0.4em;
 }/*--------------------------------
 
-port Web Font - built using nucleoapp.com
-License - nucleoapp.com/license/
+port Web Font
+Generated using nucleoapp.com
 
 -------------------------------- */
 @font-face {
   font-family: 'port';
-  src: url(/fonts/port.eot?f20cc9f3b937e1295f86a17e681e040c);
-  src: url(/fonts/port.eot?f20cc9f3b937e1295f86a17e681e040c) format('embedded-opentype'), url(/fonts/port.woff2?5f35f26b4364b0142b812a0bbac5ae7c) format('woff2'), url(/fonts/port.woff?ffbd8b592c9df034b6983f26068c5da5) format('woff'), url(/fonts/port.ttf?3a6adce13ba63b91dc7b88d7a69023dd) format('truetype'), url(/fonts/port.svg?fe5341593dc8f88c0bb83d364ef4e657) format('svg');
+  src: url(/fonts/port.eot?ec4e5f2474211e7cce2d2035595e3576);
+  src: url(/fonts/port.eot?ec4e5f2474211e7cce2d2035595e3576) format('embedded-opentype'), url(/fonts/port.woff2?f30a0a7816313c3ff6c7890fa5f57e8a) format('woff2'), url(/fonts/port.woff?3672d92b68a96521a63b0bdbd432fe56) format('woff'), url(/fonts/port.ttf?dd783e0a91c035b7bef538f8dcc1db4c) format('truetype'), url(/fonts/port.svg?4f47edf30d2828d200beedb177392c01) format('svg');
   font-weight: normal;
   font-style: normal;
 }
 /*------------------------
-	base class definition
+  base class definition
 -------------------------*/
-.port-icon {
+.port {
   display: inline-block;
-  font: normal normal normal 14px/1 'port';
-  font-size: inherit;
+  font: normal normal normal 1em/1 'port';
   speak: none;
   text-transform: none;
   /* Better Font Rendering */
@@ -133,62 +139,59 @@ License - nucleoapp.com/license/
 /*------------------------
   change icon size
 -------------------------*/
-.port-icon.lg {
-  font-size: 1.33333333em;
-  vertical-align: -16%;
+/* relative units */
+.port-sm {
+  font-size: 0.8em;
 }
-.port-icon.x2 {
-  font-size: 2em;
+.port-lg {
+  font-size: 1.2em;
 }
-.port-icon.x3 {
-  font-size: 3em;
+/* absolute units */
+.port-16 {
+  font-size: 16px;
+}
+.port-32 {
+  font-size: 32px;
 }
 /*----------------------------------
   add a square/circle background
 -----------------------------------*/
-.port-icon.square,
-.port-icon.circle {
-  padding: 0.33333333em;
-  vertical-align: -16%;
+.port-bg-square,
+.port-bg-circle {
+  padding: 0.35em;
   background-color: #eee;
 }
-.port-icon.circle {
+.port-bg-circle {
   border-radius: 50%;
 }
-/*------------------------
-  list icons
--------------------------*/
-.port-icon-ul {
+/*------------------------------------
+  use icons as list item markers
+-------------------------------------*/
+.port-ul {
   padding-left: 0;
-  margin-left: 2.14285714em;
   list-style-type: none;
 }
-.port-icon-ul > li {
-  position: relative;
+.port-ul > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  line-height: 1.4;
 }
-.port-icon-ul > li > .port-icon {
-  position: absolute;
-  left: -1.57142857em;
-  top: 0.14285714em;
-  text-align: center;
-}
-.port-icon-ul > li > .port-icon.lg {
-  top: 0;
-  left: -1.35714286em;
-}
-.port-icon-ul > li > .port-icon.circle,
-.port-icon-ul > li > .port-icon.square {
-  top: -0.19047619em;
-  left: -1.9047619em;
+.port-ul > li > .port {
+  margin-right: 0.4em;
+  line-height: inherit;
 }
 /*------------------------
   spinning icons
 -------------------------*/
-.port-icon.spin {
-  -webkit-animation: port-icon-spin 2s infinite linear;
-  animation: port-icon-spin 2s infinite linear;
+.port-is-spinning {
+  -webkit-animation: port-spin 2s infinite linear;
+  animation: port-spin 2s infinite linear;
 }
-@-webkit-keyframes port-icon-spin {
+@-webkit-keyframes port-spin {
   0% {
     -webkit-transform: rotate(0deg);
   }
@@ -196,7 +199,7 @@ License - nucleoapp.com/license/
     -webkit-transform: rotate(360deg);
   }
 }
-@keyframes port-icon-spin {
+@keyframes port-spin {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -209,57 +212,59 @@ License - nucleoapp.com/license/
 /*------------------------
   rotated/flipped icons
 -------------------------*/
-.port-icon.rotate-90 {
+.port-rotate-90 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
-.port-icon.rotate-180 {
+.port-rotate-180 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-.port-icon.rotate-270 {
+.port-rotate-270 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   -webkit-transform: rotate(270deg);
   transform: rotate(270deg);
 }
-.port-icon.flip-y {
+.port-flip-y {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
   -webkit-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
-.port-icon.flip-x {
+.port-flip-x {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   -webkit-transform: scale(1, -1);
   transform: scale(1, -1);
 }
 /*------------------------
-	font icons
+  icons
 -------------------------*/
 
 .port-phone-2::before {
-    content: "\EA04";
+  content: "\EA04";
 }
 
 .port-pin-3::before {
-    content: "\EA05";
+  content: "\EA05";
 }
 
 .port-email-83-2::before {
-    content: "\EA06";
+  content: "\EA06";
 }
 
 .port-logo-instagram::before {
-    content: "\EA07";
+  content: "\EA07";
 }
 
 .port-logo-fb-simple::before {
-    content: "\EA08";
+  content: "\EA08";
 }
 
+.port-logo-messenger::before {
+  content: "\EA09";
+}
 
-/* all icon font classes list here */
 
 
 .container-fluid {

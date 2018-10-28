@@ -19,7 +19,7 @@
                             @auth
                             <div class="has-text-centered">
                                 <p class="title is-4">{{auth()->user()->name}}</p>
-                                <p class="subtitle is-6">{{auth()->user()->email}}</p>
+                  {{--               <p class="subtitle is-6">{{auth()->user()->email}}</p> --}}
                                 <a class="button" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Atsijungti</a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none; visibility: hidden;">

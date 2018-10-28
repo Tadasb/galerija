@@ -1,19 +1,29 @@
 <template>
     <el-tabs tab-position="top" style="padding-top: 30px" @tab-click="handleClick">
 
-        <el-tab-pane label="Parodos"><art-shows v-if="activeTabIndex == 0"></art-shows></el-tab-pane>
+        <el-tab-pane label="Parodos">
+            <item-list :items_type="'parodos'" v-if="activeTabIndex == 0"/>
+        </el-tab-pane>
 
-        <el-tab-pane label="Menininkai"><menininkai  v-if="activeTabIndex == 1"></menininkai></el-tab-pane>
+        <el-tab-pane label="Menininkai">
+            <item-list :items_type="'menininkai'" v-if="activeTabIndex == 1"/>
+        </el-tab-pane>
 
-        <el-tab-pane label="Renginiai"><renginiai  v-if="activeTabIndex == 2"></renginiai></el-tab-pane>
+        <el-tab-pane label="Renginiai">
+            <item-list :items_type="'renginiai'" v-if="activeTabIndex == 2"/>
+        </el-tab-pane>
 
-        <el-tab-pane label="Dizainas"><dizainas  v-if="activeTabIndex == 3"></dizainas></el-tab-pane>
+        <el-tab-pane label="Dizainas">
+            <item-list :items_type="'dizainas'" v-if="activeTabIndex == 3"/>
+        </el-tab-pane>
 
         <el-tab-pane label="Fotografija">
             <page  v-if="activeTabIndex == 4" :page_name="'fotografija'"></page>
         </el-tab-pane>
 
-        <el-tab-pane label="Dirbtuvės"><dirbtuves  v-if="activeTabIndex == 5"></dirbtuves></el-tab-pane>
+        <el-tab-pane label="Dirbtuvės">
+            <item-list :items_type="'dirbtuves'" v-if="activeTabIndex == 5"/>
+        </el-tab-pane>
 
         <el-tab-pane label="Meniu">
             <page v-if="activeTabIndex == 6" :page_name="'meniu'"></page>
@@ -47,7 +57,7 @@ export default {
     },
 
     mounted() {
-        this.activeTabIndex = '8'
+
     }
 
 }

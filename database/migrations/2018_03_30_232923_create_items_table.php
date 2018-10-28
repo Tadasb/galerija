@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateArtShowsTable extends Migration
+class CreateItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,21 @@ class CreateArtShowsTable extends Migration
      */
     public function up()
     {
-        Schema::create('art_shows', function (Blueprint $table) {
+        Schema::create('items', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('url')->unique();
+            $table->string('type');
+            $table->string('category')->nullable();
+            $table->string('sub_category')->nullable();
             $table->string('name');
-            $table->string('short_description');
+            $table->string('url');
+            $table->string('short_description')->nullable();
             $table->text('description')->nullable();
-            $table->json('data')->nullable();
             $table->date('starts_at')->nullable();
             $table->date('ends_at')->nullable();
-            $table->time('starting_time')->nullable();
+            $table->json('data')->nullable();
             $table->timestamps();
             $table->softDeletes();
+            $table->unique(['type', 'url']);
         });
     }
 
@@ -35,6 +38,6 @@ class CreateArtShowsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('art_shows');
+        Schema::dropIfExists('items');
     }
 }

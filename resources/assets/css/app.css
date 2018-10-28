@@ -97,6 +97,13 @@ a.navbar-item, a.is-active {
 input:focus,
 select:focus,
 textarea:focus,
-button:focus {
+button:focus,
+.medium-editor-element:focus {
     outline: none;
+}
+
+.medium-editor-element {
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    padding: 0.4em;
 }

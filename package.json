@@ -19,6 +19,7 @@
         "bulma": "^0.6.2",
         "element-ui": "^2.3.2",
         "v-img": "^0.2.0",
+        "vue2-medium-editor": "^1.1.5",
         "vuedraggable": "^2.16.0"
     }
 }

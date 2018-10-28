@@ -4,8 +4,7 @@
 <div class="row p-5">
 	<div class="col">
 		@if(isset($page) && $page->data)
-		{{$page->data->text}}
-
+		{!!$page->data->text!!}
 		@endif
 	</div>
 </div>
@@ -14,7 +13,7 @@
 
 	@foreach($page->data->images as $image)
 	<div class="col">
-		<img v-img:nuoma src="{{asset($image->path)}}" alt="">
+		<img v-img:nuoma src="/storage/{{$image->url}}" alt="">
 	</div>
 	@endforeach
 </div>

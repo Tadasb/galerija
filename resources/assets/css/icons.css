@@ -1,7 +1,7 @@
 /*--------------------------------
 
-port Web Font - built using nucleoapp.com
-License - nucleoapp.com/license/
+port Web Font
+Generated using nucleoapp.com
 
 -------------------------------- */
 @font-face {
@@ -12,12 +12,11 @@ License - nucleoapp.com/license/
   font-style: normal;
 }
 /*------------------------
-	base class definition
+  base class definition
 -------------------------*/
-.port-icon {
+.port {
   display: inline-block;
-  font: normal normal normal 14px/1 'port';
-  font-size: inherit;
+  font: normal normal normal 1em/1 'port';
   speak: none;
   text-transform: none;
   /* Better Font Rendering */
@@ -27,63 +26,56 @@ License - nucleoapp.com/license/
 /*------------------------
   change icon size
 -------------------------*/
-.port-icon.lg {
-  font-size: 1.33333333em;
-  vertical-align: -16%;
+/* relative units */
+.port-sm {
+  font-size: 0.8em;
 }
-.port-icon.x2 {
-  font-size: 2em;
+.port-lg {
+  font-size: 1.2em;
 }
-.port-icon.x3 {
-  font-size: 3em;
+/* absolute units */
+.port-16 {
+  font-size: 16px;
+}
+.port-32 {
+  font-size: 32px;
 }
 /*----------------------------------
   add a square/circle background
 -----------------------------------*/
-.port-icon.square,
-.port-icon.circle {
-  padding: 0.33333333em;
-  vertical-align: -16%;
+.port-bg-square,
+.port-bg-circle {
+  padding: 0.35em;
   background-color: #eee;
 }
-.port-icon.circle {
+.port-bg-circle {
   border-radius: 50%;
 }
-/*------------------------
-  list icons
--------------------------*/
-.port-icon-ul {
+/*------------------------------------
+  use icons as list item markers
+-------------------------------------*/
+.port-ul {
   padding-left: 0;
-  margin-left: 2.14285714em;
   list-style-type: none;
 }
-.port-icon-ul > li {
-  position: relative;
+.port-ul > li {
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.4;
 }
-.port-icon-ul > li > .port-icon {
-  position: absolute;
-  left: -1.57142857em;
-  top: 0.14285714em;
-  text-align: center;
-}
-.port-icon-ul > li > .port-icon.lg {
-  top: 0;
-  left: -1.35714286em;
-}
-.port-icon-ul > li > .port-icon.circle,
-.port-icon-ul > li > .port-icon.square {
-  top: -0.19047619em;
-  left: -1.9047619em;
+.port-ul > li > .port {
+  margin-right: 0.4em;
+  line-height: inherit;
 }
 /*------------------------
   spinning icons
 -------------------------*/
-.port-icon.spin {
-  -webkit-animation: port-icon-spin 2s infinite linear;
-  -moz-animation: port-icon-spin 2s infinite linear;
-  animation: port-icon-spin 2s infinite linear;
+.port-is-spinning {
+  -webkit-animation: port-spin 2s infinite linear;
+  -moz-animation: port-spin 2s infinite linear;
+  animation: port-spin 2s infinite linear;
 }
-@-webkit-keyframes port-icon-spin {
+@-webkit-keyframes port-spin {
   0% {
     -webkit-transform: rotate(0deg);
   }
@@ -91,7 +83,7 @@ License - nucleoapp.com/license/
     -webkit-transform: rotate(360deg);
   }
 }
-@-moz-keyframes port-icon-spin {
+@-moz-keyframes port-spin {
   0% {
     -moz-transform: rotate(0deg);
   }
@@ -99,7 +91,7 @@ License - nucleoapp.com/license/
     -moz-transform: rotate(360deg);
   }
 }
-@keyframes port-icon-spin {
+@keyframes port-spin {
   0% {
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
@@ -118,7 +110,7 @@ License - nucleoapp.com/license/
 /*------------------------
   rotated/flipped icons
 -------------------------*/
-.port-icon.rotate-90 {
+.port-rotate-90 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
@@ -126,7 +118,7 @@ License - nucleoapp.com/license/
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
 }
-.port-icon.rotate-180 {
+.port-rotate-180 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
@@ -134,7 +126,7 @@ License - nucleoapp.com/license/
   -o-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-.port-icon.rotate-270 {
+.port-rotate-270 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   -webkit-transform: rotate(270deg);
   -moz-transform: rotate(270deg);
@@ -142,7 +134,7 @@ License - nucleoapp.com/license/
   -o-transform: rotate(270deg);
   transform: rotate(270deg);
 }
-.port-icon.flip-y {
+.port-flip-y {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
   -webkit-transform: scale(-1, 1);
   -moz-transform: scale(-1, 1);
@@ -150,7 +142,7 @@ License - nucleoapp.com/license/
   -o-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
-.port-icon.flip-x {
+.port-flip-x {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   -webkit-transform: scale(1, -1);
   -moz-transform: scale(1, -1);
@@ -159,28 +151,30 @@ License - nucleoapp.com/license/
   transform: scale(1, -1);
 }
 /*------------------------
-	font icons
+  icons
 -------------------------*/
 
 .port-phone-2::before {
-    content: "\ea04";
+  content: "\ea04";
 }
 
 .port-pin-3::before {
-    content: "\ea05";
+  content: "\ea05";
 }
 
 .port-email-83-2::before {
-    content: "\ea06";
+  content: "\ea06";
 }
 
 .port-logo-instagram::before {
-    content: "\ea07";
+  content: "\ea07";
 }
 
 .port-logo-fb-simple::before {
-    content: "\ea08";
+  content: "\ea08";
 }
 
+.port-logo-messenger::before {
+  content: "\ea09";
+}
 
-/* all icon font classes list here */

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Page;
-use App\ArtShow;
+use App\Item;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -21,19 +21,30 @@ class HomeController extends Controller
 
     public function parodos()
     {
-        $shows = ArtShow::all();
+        $shows = Item::where('type', 'paroda')->get();
 
         return view('parodos', compact('shows'));
     }
 
     public function menininkai()
     {
-        return view('menininkai');
+        $menininkai = Item::where('type', 'menininkas')->get();
+
+        return view('menininkai', compact('menininkai'));
+    }
+
+    public function menininkas($url)
+    {
+        $meninkas = Item::where('type', 'menininkas')->where('url', $url)->first();
+
+        return view('menininkai', compact('meninkas'));
     }
 
     public function renginiai()
     {
-        return view('renginiai');
+        $renginiai = Item::where('type', 'renginys')->get();
+
+        return view('renginiai', compact('renginiai'));
     }
 
     public function dizainas()
@@ -76,6 +87,8 @@ class HomeController extends Controller
 
     public function kontaktai()
     {
+        // $page = Page::firstOrCreate(['name' => 'kontaktai']);
+        
         return view('kontaktai');
     }
 }

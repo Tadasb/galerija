@@ -20,6 +20,7 @@ Route::get('/', 'HomeController@index')->name('index');
 Route::get('/parodos', 'HomeController@parodos')->name('parodos');
 
 Route::get('/menininkai', 'HomeController@menininkai')->name('menininkai');
+Route::get('/menininkai/{url}', 'HomeController@menininkas')->name('menininkas');
 Route::get('/renginiai', 'HomeController@renginiai')->name('renginiai');
 
 Route::get('/dizainas', 'HomeController@dizainas')->name('dizainas');
@@ -39,6 +40,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
 	Route::get('/', 'AdminController@dashboard')->name('dashboard');
 	Route::apiResource('/art-shows', 'ArtShowController');
 	Route::apiResource('/pages', 'PageController');
+	Route::apiResource('/items', 'ItemController');
 	Route::post('/pictures', 'PictureController@store')->name('pictures.store');
 	Route::delete('/pictures/{picture}', 'PictureController@destroy')->name('pictures.delete');
 

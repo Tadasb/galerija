@@ -38,11 +38,11 @@
                         <a href="/nuoma" class="navbar-item @if(Request::is('nuoma') || Request::is('nuoma/*')) is-active @endif">NUOMA</a>
                         <a href="/kontaktai" class="navbar-item @if(Request::is('kontaktai') || Request::is('kontaktai/*')) is-active @endif">KONTAKTAI</a>
                         <div class="contact-icons block" style="padding-top: 12px">
-                            <a class="contact-link" href="tel:+37062768061"><i class="contact-icon port-icon port-phone-2"></i></a>
-                            <a href="mailto:info@portfoliogalerija.lt"><i class="contact-icon port-icon port-email-83-2"></i></a>
-                            <a href="https://goo.gl/maps/Ep7NFW9uCh42"><i class="contact-icon port-icon port-pin-3" target="_blank"></i></a>
-                            <i class="contact-icon port-icon port-logo-instagram"></i>
-                            <i class="contact-icon port-icon port-logo-fb-simple"></i>
+                            <a class="contact-link" href="tel:+37062768061"><i class="contact-icon port port-phone-2"></i></a>
+                            <a href="mailto:info@portfoliogalerija.lt"><i class="contact-icon port port-email-83-2"></i></a>
+                            <a href="https://goo.gl/maps/Ep7NFW9uCh42"><i class="contact-icon port port-pin-3" target="_blank"></i></a>
+                            <i class="contact-icon port port-logo-instagram"></i>
+                            <i class="contact-icon port port-logo-fb-simple"></i>
                         </div>
                     </div>
                     <div class="navbar-end">
@@ -100,11 +100,11 @@
                             </li><br>
                           </ul>
                         <div class="contact-icons">
-                   {{--          <a class="contact-link" href="tel:+37062768061"><i class="contact-icon port-icon port-phone-2"></i></a> --}}
-                            <a href="mailto:info@portfoliogalerija.lt"><i class="contact-icon port-icon port-email-83-2"></i></a>
-                            <a href="https://goo.gl/maps/Ep7NFW9uCh42"><i class="contact-icon port-icon port-pin-3" target="_blank"></i></a>
-                            <i class="contact-icon port-icon port-logo-instagram"></i>
-                            <i class="contact-icon port-icon port-logo-fb-simple"></i>
+                            <a class="contact-link" href="tel:+37062737154"><i class="contact-icon port port-phone-2"></i></a>
+                            <a href="mailto:info@portfoliogalerija.lt"><i class="contact-icon port port-email-83-2"></i></a>
+                            <a href="https://goo.gl/maps/7LG3Gp5Dt6S2" target="blank"><i class="contact-icon port port-pin-3" ></i></a>
+                            <a href="https://www.instagram.com/portfolio.cafe/" target="blank"><i class="contact-icon port port-logo-instagram"></i></a>
+                            <a href="https://www.facebook.com/portfoliobirzai" target="blank"><i class="contact-icon port port-logo-fb-simple"></i></a>
                         </div>
                         @auth
                         <ul class="menu-list">

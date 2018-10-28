@@ -3,17 +3,16 @@
 namespace App;
 
 use Carbon\Carbon;
-use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
-use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class ArtShow extends Model implements HasMedia
+class Item extends Model
 {
 
     protected $casts = ['data' => 'object'];
-    use HasMediaTrait;
     use SoftDeletes;
+
+
     
     public function getStartsAtDotAttribute($attr) {
     	

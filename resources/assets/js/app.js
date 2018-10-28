@@ -21,6 +21,9 @@ Vue.component('draggable', require('vuedraggable'))
 
 Vue.use(require('v-img'))
 
+import editor from 'vue2-medium-editor'
+Vue.component('medium-editor', editor)
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -28,14 +31,11 @@ Vue.use(require('v-img'))
  */
 
 Vue.component('admin-tabs', require('./components/admin-tabs.vue'));
-Vue.component('art-shows', require('./components/art-shows.vue'));
-Vue.component('menininkai', require('./components/menininkai.vue'));
-Vue.component('renginiai', require('./components/renginiai.vue'));
-Vue.component('dizainas', require('./components/dizainas.vue'));
-Vue.component('dirbtuves', require('./components/dirbtuves.vue'));
 Vue.component('kontaktai', require('./components/kontaktai.vue'));
 
 Vue.component('page', require('./components/page.vue'));
+Vue.component('item-list', require('./components/item-list.vue'));
+Vue.component('item', require('./components/item.vue'));
 Vue.component('vue-table', require('./components/elements/table.vue'));
 Vue.component('image-upload', require('./components/elements/image-upload.vue'));
 Vue.component('multiple-image-upload', require('./components/elements/multiple-image-upload.vue'));

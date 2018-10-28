@@ -4,8 +4,7 @@
 <div class="row p-5">
 	<div class="col">
 		@if(isset($page) && $page->data)
-		{{$page->data->text}}
-
+		{!!$page->data->text!!}
 		@endif
 	</div>
 </div>
