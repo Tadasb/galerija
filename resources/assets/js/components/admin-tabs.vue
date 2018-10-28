@@ -37,7 +37,7 @@
             <page v-if="activeTabIndex == 8" :page_name="'nuoma'"></page>
         </el-tab-pane>
 
-        <el-tab-pane label="Kontaktai"><kontaktai  v-if="activeTabIndex == 9"></kontaktai></el-tab-pane>
+<!--         <el-tab-pane label="Kontaktai"><kontaktai  v-if="activeTabIndex == 9"></kontaktai></el-tab-pane> -->
         
     </el-tabs>
 </template>
