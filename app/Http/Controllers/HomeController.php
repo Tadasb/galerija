@@ -16,40 +16,48 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $page = Page::firstOrCreate(['name' => 'pradinis']);
+        
+        return view('index', compact('page'));
     }
 
     public function parodos()
     {
-        $shows = Item::where('type', 'paroda')->get();
+        $parodos = Item::where('type', 'parodos')->get();
+        $page = Page::firstOrCreate(['name' => 'parodos']);
 
-        return view('parodos', compact('shows'));
+        return view('parodos', compact('parodos', 'page'));
     }
 
     public function menininkai()
     {
-        $menininkai = Item::where('type', 'menininkas')->get();
+        $menininkai = Item::where('type', 'menininkai')->get();
+        $page = Page::firstOrCreate(['name' => 'menininkai']);
 
-        return view('menininkai', compact('menininkai'));
+        return view('menininkai', compact('menininkai', 'page'));
     }
 
     public function menininkas($url)
     {
-        $meninkas = Item::where('type', 'menininkas')->where('url', $url)->first();
+        $menininkas = Item::where('type', 'menininkai')->where('url', $url)->first();
 
-        return view('menininkai', compact('meninkas'));
+        return view('menininkas', compact('menininkas'));
     }
 
     public function renginiai()
     {
         $renginiai = Item::where('type', 'renginys')->get();
+        $page = Page::firstOrCreate(['name' => 'renginiai']);
 
-        return view('renginiai', compact('renginiai'));
+        return view('renginiai', compact('renginiai', 'page'));
     }
 
     public function dizainas()
     {
-        return view('dizainas');
+        $dizainas = Item::where('type', 'dizainas')->get();
+        $page = Page::firstOrCreate(['name' => 'dizainas']);
+
+        return view('dizainas', compact('dizainas', 'page'));
     }
 
     public function fotografija()
@@ -61,7 +69,10 @@ class HomeController extends Controller
 
     public function dirbtuves()
     {
-        return view('dirbtuves');
+        $dirbtuves = Item::where('type', 'dirbtuves')->get();
+        $page = Page::firstOrCreate(['name' => 'dirbtuves']);
+
+        return view('dirbtuves', compact('dirbtuves', 'page'));
     }
 
     public function meniu()
@@ -87,8 +98,8 @@ class HomeController extends Controller
 
     public function kontaktai()
     {
-        // $page = Page::firstOrCreate(['name' => 'kontaktai']);
+        $page = Page::firstOrCreate(['name' => 'kontaktai']);
         
-        return view('kontaktai');
+        return view('kontaktai', compact('page'));
     }
 }

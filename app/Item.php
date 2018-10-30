@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Item extends Model
 {
 
-    protected $casts = ['data' => 'object'];
+    protected $casts = ['data' => 'object', 'starts_at' => 'string', 'ends_at' => 'string'];
     use SoftDeletes;
 
 

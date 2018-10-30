@@ -1,117 +1,4 @@
-@import url(https://cdnjs.cloudflare.com/ajax/libs/medium-editor/5.22.1/css/medium-editor.css);@import url(https://cdnjs.cloudflare.com/ajax/libs/medium-editor/5.22.1/css/themes/beagle.css);navbar {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-}
-
-a.navbar-item, a.is-active {
-    color: #666!important
-}
-
-#port-logo {
-    background: none!important
-}
-
-[v-cloak] { display: none; }
-
-
-.navbar-brand a {
-    margin: 50px 0px 0px 25px;
-    padding: 0;
-}
-
-.navbar-burger {
-    margin: 65px 45px 0px 40px;
-}
-
-.menu {
-    padding: 0px 40px;
-}
-
-.menu-list li {
-    display: inline-block;
-}
-
-.menu-list a {
-    display: inline-block;
-}
-
-.menu-link {
-    color: #666;
-    text-decoration: none;
-    margin-right: 120px;
-}
-
-.menu-link::after {
-    margin-top: 4px;
-    content: '';
-    display: block;
-    width: 0;
-    height: 2px;
-    background: #000;
-    -webkit-transition: width .3s;
-    transition: width .3s;
-}
-
-.menu-link:hover::after {
-    width: 100%;
-}
-
-.active::after {
-    margin-top: 4px;
-    content: '';
-    display: block;
-    width: 100%;
-    height: 2px;
-    background: #000;
-}
-
-.menu-divider {
-    content: "";
-    height: 16px;
-}
-
-.contact-icons {
-    padding-left: 10px;
-}
-
-.contact-icons a {
-    display: inline-block;
-    color: #666;
-}
-
-.contact-icon {
-    padding: 3px;
-}
-
-.description {
-    padding: 16px 0px;
-    margin: 16px 0px;
-}
-
-.logo-slogan {
-    -moz-flex: 1 100%;
-    -ms-flex: 1 100%;
-    -webkit-box-flex: 1;
-            flex: 1 100%;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-}
-
-input:focus,
-select:focus,
-textarea:focus,
-button:focus,
-.medium-editor-element:focus {
-    outline: none;
-}
-
-.medium-editor-element {
-    border: 1px solid #dedede;
-    border-radius: 4px;
-    padding: 0.4em;
-}/*--------------------------------
+@import url(https://cdnjs.cloudflare.com/ajax/libs/medium-editor/5.22.1/css/medium-editor.css);@import url(https://cdnjs.cloudflare.com/ajax/libs/medium-editor/5.22.1/css/themes/beagle.css);/*--------------------------------
 
 port Web Font
 Generated using nucleoapp.com
@@ -5050,7 +4937,190 @@ a.text-dark:focus {
   visibility: hidden !important;
 }
 
-/*! bulma.io v0.6.2 | MIT License | github.com/jgthms/bulma */
+navbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: bold!important;
+}
+
+h1 {
+    font-size: 2em!important;
+}
+
+h2 {
+    font-size: 1.5em!important;
+}
+
+h3 {
+    font-size: 1.3em!important;
+}
+
+h4 {
+    font-size: 1.2em!important;
+}
+
+h5 {
+    font-size: 1.1em!important;
+}
+
+a.link {
+    color: inherit!important;
+}
+
+a.navbar-item, a.is-active {
+    color: #666!important
+}
+
+#port-logo {
+    background: none!important
+}
+
+[v-cloak] { display: none; }
+
+
+.navbar-brand a {
+    margin: 30px 0px 0px 27px;
+    padding: 0;
+}
+
+.navbar-burger {
+    margin: 65px 2px 0px 40px;
+}
+
+.navbar-burger:hover {
+  background-color: rgba(0, 0, 0, 0)!important;
+}
+
+.menu {
+    padding: 0px;
+}
+
+.menu-list li {
+    display: inline-block;
+}
+
+.menu-list a {
+    display: inline-block;
+}
+
+.menu-link {
+    color: #666;
+    text-decoration: none;
+    margin-right: 120px;
+    padding-left: 0px!important;
+}
+
+.menu-link::after {
+    margin-top: 4px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #000;
+    -webkit-transition: width .3s;
+    transition: width .3s;
+}
+
+.menu-link:hover::after {
+    width: 100%;
+}
+
+.active::after {
+    margin-top: 4px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #000;
+}
+
+.menu-divider {
+    content: "";
+    height: 16px;
+}
+
+.contact-icons a {
+    display: inline-block;
+    color: #666;
+}
+
+.contact-icon {
+    padding: 3px;
+}
+
+.description {
+    padding: 16px 0px;
+    margin: 16px 0px;
+}
+
+.logo-slogan {
+    -moz-flex: 1 100%;
+    -ms-flex: 1 100%;
+    -webkit-box-flex: 1;
+            flex: 1 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus,
+.medium-editor-element:focus {
+    outline: none;
+}
+
+.medium-editor-element {
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    padding: 0.4em;
+}
+
+.artist-image {
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    -webkit-filter: saturate(0.9);
+            filter: saturate(0.9);
+}
+
+.artist-image:hover {
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02);
+    -webkit-filter: saturate(1);
+            filter: saturate(1);
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(219,219,219,1);
+            box-shadow: 0px 5px 5px 0px rgba(219,219,219,1);
+}
+
+.page-text {
+    background-color: #efefef;
+}
+
+.filter-item {
+    padding: 0.5em 1em;
+    margin-right: 2em;
+    border: 1px solid #222;
+    cursor: pointer;
+}
+
+.filter-item.active-filter {
+    background-color: #606060;
+    color: #fff;
+    border: 1px solid #606060;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.filter-item:hover {
+    background-color: #606060;
+    border: 1px solid #606060;
+    color: #fff;
+}/*! bulma.io v0.6.2 | MIT License | github.com/jgthms/bulma */
 
 @-webkit-keyframes spinAround {
   from {

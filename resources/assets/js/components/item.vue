@@ -52,13 +52,21 @@
         <div v-if="item.type === 'parodos'" class="row p-3">
             <div class="col-sm-6">
                 <label for=""><strong>Pradžios data</strong></label><br>
-                <el-date-picker v-model="item.starts_at" type="date" placeholder="" class="pb-2">
-                </el-date-picker>
+                <el-date-picker class="pb-2"
+                    v-model="item.starts_at" 
+                    type="date" 
+                    placeholder=""
+                    :value-format="'yyyy-MM-dd'"
+                ></el-date-picker>
             </div>
             <div class="col-sm-6">
                 <label for=""><strong>Pabaigos data</strong></label><br>
-                <el-date-picker v-model="item.ends_at" type="date" placeholder="" class="pb-2">
-                </el-date-picker>
+                <el-date-picker class="pb-2"
+                    v-model="item.ends_at" 
+                    type="date" 
+                    placeholder=""
+                    :value-format="'yyyy-MM-dd'"
+                ></el-date-picker>
             </div>
         </div>
         <div class="row p-3">

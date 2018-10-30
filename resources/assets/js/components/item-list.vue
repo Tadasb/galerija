@@ -2,6 +2,9 @@
     <div>
         <div class="row p-3">
             <div class="col">
+                <div class="float-left">
+                    <h2 v-if="status === 'editing'">pridėti naują</h2>
+                </div>
                 <div class="float-right">
                     <div v-if="status === 'index'">
                         <el-button type="primary" size="medium" round @click="createItem()">+ sukurti</el-button>
@@ -53,7 +56,7 @@
 export default {
     props: {
 
-        items_type: {
+        page_name: {
             type: String,
             default: 'kita'
         },
@@ -63,7 +66,7 @@ export default {
         return {
             items: [],
             status: 'index',
-            new_item_template: { id: null, type: this.items_type, name: null, data: { images: [], text: null, og_image: null}, category: null, sub_category: null, url: null, short_description: null, description: null, starts_at: null, ends_at: null },
+            new_item_template: { id: null, type: this.page_name, name: null, data: { images: [], text: null, og_image: null}, category: null, sub_category: null, url: null, short_description: null, description: null, starts_at: null, ends_at: null },
             item: {},
             editing_item: {},
             item_to_delete: {},
@@ -74,7 +77,7 @@ export default {
     methods: {
 
         getItems() {
-            axios.get('/admin/items?type=' + this.items_type)
+            axios.get('/admin/items?type=' + this.page_name)
             .then(res => this.items = res.data)
         },
 

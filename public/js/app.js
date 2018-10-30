@@ -3168,6 +3168,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -3453,11 +3463,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: {
 
-        items_type: {
+        page_name: {
             type: String,
             default: 'kita'
         }
@@ -3467,7 +3480,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             items: [],
             status: 'index',
-            new_item_template: { id: null, type: this.items_type, name: null, data: { images: [], text: null, og_image: null }, category: null, sub_category: null, url: null, short_description: null, description: null, starts_at: null, ends_at: null },
+            new_item_template: { id: null, type: this.page_name, name: null, data: { images: [], text: null, og_image: null }, category: null, sub_category: null, url: null, short_description: null, description: null, starts_at: null, ends_at: null },
             item: {},
             editing_item: {},
             item_to_delete: {},
@@ -3480,7 +3493,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getItems: function getItems() {
             var _this = this;
 
-            axios.get('/admin/items?type=' + this.items_type).then(function (res) {
+            axios.get('/admin/items?type=' + this.page_name).then(function (res) {
                 return _this.items = res.data;
             });
         },
@@ -3576,6 +3589,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3875,11 +3896,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: {
         page_name: {
             type: String
+        },
+        show_images: {
+            type: Boolean,
+            default: true
         }
     },
 
@@ -68469,11 +68499,18 @@ var render = function() {
     [
       _c(
         "el-tab-pane",
+        { attrs: { label: "Pradinis" } },
+        [_c("page", { attrs: { page_name: "pradinis", show_images: false } })],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "el-tab-pane",
         { attrs: { label: "Parodos" } },
         [
-          _vm.activeTabIndex == 0
-            ? _c("item-list", { attrs: { items_type: "parodos" } })
-            : _vm._e()
+          _c("page", { attrs: { page_name: "parodos", show_images: false } }),
+          _vm._v(" "),
+          _c("item-list", { attrs: { page_name: "parodos" } })
         ],
         1
       ),
@@ -68482,9 +68519,11 @@ var render = function() {
         "el-tab-pane",
         { attrs: { label: "Menininkai" } },
         [
-          _vm.activeTabIndex == 1
-            ? _c("item-list", { attrs: { items_type: "menininkai" } })
-            : _vm._e()
+          _c("page", {
+            attrs: { page_name: "menininkai", show_images: false }
+          }),
+          _vm._v(" "),
+          _c("item-list", { attrs: { page_name: "menininkai" } })
         ],
         1
       ),
@@ -68493,9 +68532,9 @@ var render = function() {
         "el-tab-pane",
         { attrs: { label: "Renginiai" } },
         [
-          _vm.activeTabIndex == 2
-            ? _c("item-list", { attrs: { items_type: "renginiai" } })
-            : _vm._e()
+          _c("page", { attrs: { page_name: "renginiai", show_images: false } }),
+          _vm._v(" "),
+          _c("item-list", { attrs: { page_name: "renginiai" } })
         ],
         1
       ),
@@ -68504,9 +68543,9 @@ var render = function() {
         "el-tab-pane",
         { attrs: { label: "Dizainas" } },
         [
-          _vm.activeTabIndex == 3
-            ? _c("item-list", { attrs: { items_type: "dizainas" } })
-            : _vm._e()
+          _c("page", { attrs: { page_name: "dizainas", show_images: false } }),
+          _vm._v(" "),
+          _c("item-list", { attrs: { page_name: "dizainas" } })
         ],
         1
       ),
@@ -68514,11 +68553,7 @@ var render = function() {
       _c(
         "el-tab-pane",
         { attrs: { label: "Fotografija" } },
-        [
-          _vm.activeTabIndex == 4
-            ? _c("page", { attrs: { page_name: "fotografija" } })
-            : _vm._e()
-        ],
+        [_c("page", { attrs: { page_name: "fotografija" } })],
         1
       ),
       _vm._v(" "),
@@ -68526,9 +68561,9 @@ var render = function() {
         "el-tab-pane",
         { attrs: { label: "Dirbtuvės" } },
         [
-          _vm.activeTabIndex == 5
-            ? _c("item-list", { attrs: { items_type: "dirbtuves" } })
-            : _vm._e()
+          _c("page", { attrs: { page_name: "dirbtuves", show_images: false } }),
+          _vm._v(" "),
+          _c("item-list", { attrs: { page_name: "dirbtuves" } })
         ],
         1
       ),
@@ -68536,33 +68571,28 @@ var render = function() {
       _c(
         "el-tab-pane",
         { attrs: { label: "Meniu" } },
-        [
-          _vm.activeTabIndex == 6
-            ? _c("page", { attrs: { page_name: "meniu" } })
-            : _vm._e()
-        ],
+        [_c("page", { attrs: { page_name: "meniu" } })],
         1
       ),
       _vm._v(" "),
       _c(
         "el-tab-pane",
         { attrs: { label: "Ledai" } },
-        [
-          _vm.activeTabIndex == 7
-            ? _c("page", { attrs: { page_name: "ledai" } })
-            : _vm._e()
-        ],
+        [_c("page", { attrs: { page_name: "ledai" } })],
         1
       ),
       _vm._v(" "),
       _c(
         "el-tab-pane",
         { attrs: { label: "Nuoma" } },
-        [
-          _vm.activeTabIndex == 8
-            ? _c("page", { attrs: { page_name: "nuoma" } })
-            : _vm._e()
-        ],
+        [_c("page", { attrs: { page_name: "nuoma" } })],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "el-tab-pane",
+        { attrs: { label: "Kontaktai" } },
+        [_c("page", { attrs: { page_name: "kontaktai", show_images: false } })],
         1
       )
     ],
@@ -68845,40 +68875,44 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", {}, [
     _c("div", { staticClass: "row p-3" }, [
-      _c(
-        "div",
-        { staticClass: "col" },
-        [
-          !_vm.editing
-            ? _c(
-                "el-button",
-                {
-                  staticClass: "float-right",
-                  attrs: { type: "primary", round: "", size: "medium" },
-                  on: {
-                    click: function($event) {
-                      _vm.editing = true
+      _c("div", { staticClass: "col" }, [
+        _c("div", { staticClass: "float-left" }, [
+          _c("h1", [_vm._v(_vm._s(_vm.page_name))])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "float-right" },
+          [
+            !_vm.editing
+              ? _c(
+                  "el-button",
+                  {
+                    attrs: { type: "primary", round: "", size: "medium" },
+                    on: {
+                      click: function($event) {
+                        _vm.editing = true
+                      }
                     }
-                  }
-                },
-                [_vm._v("koreguoti")]
-              )
-            : _c(
-                "el-button",
-                {
-                  staticClass: "float-right",
-                  attrs: { type: "success", round: "", size: "medium" },
-                  on: {
-                    click: function($event) {
-                      _vm.savePage()
+                  },
+                  [_vm._v("koreguoti")]
+                )
+              : _c(
+                  "el-button",
+                  {
+                    attrs: { type: "success", round: "", size: "medium" },
+                    on: {
+                      click: function($event) {
+                        _vm.savePage()
+                      }
                     }
-                  }
-                },
-                [_vm._v("saugoti")]
-              )
-        ],
-        1
-      )
+                  },
+                  [_vm._v("saugoti")]
+                )
+          ],
+          1
+        )
+      ])
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "row p-3" }, [
@@ -68890,7 +68924,7 @@ var render = function() {
           _vm._v(" "),
           _vm.editing
             ? _c("medium-editor", {
-                attrs: { text: _vm.page.data.text },
+                attrs: { text: _vm.page.data.text, placeholder: "''" },
                 on: {
                   edit: function($event) {
                     _vm.processEditOperation($event, _vm.page.data)
@@ -68932,69 +68966,76 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "row p-3" }, [
-      _c(
-        "div",
-        { staticClass: "col" },
-        [
-          _vm._m(2),
-          _vm._v(" "),
-          _vm.editing
-            ? _c("multiple-image-upload", {
-                attrs: {
-                  images: _vm.page.data.images,
-                  image_type: _vm.page_name
-                }
-              })
-            : _c(
-                "div",
-                { staticClass: "row" },
-                _vm._l(_vm.page.data.images, function(image) {
-                  return _c("div", { staticClass: "col-sm-3" }, [
-                    _c("img", {
-                      directives: [{ name: "img", rawName: "v-img" }],
-                      staticClass: "img-fluid",
-                      attrs: { src: image.url, alt: "" }
+    _vm.show_images || _vm.editing || _vm.page.data.images.length
+      ? _c("div", { staticClass: "row p-3" }, [
+          _c(
+            "div",
+            { staticClass: "col" },
+            [
+              _vm._m(2),
+              _vm._v(" "),
+              _vm.editing
+                ? _c("multiple-image-upload", {
+                    attrs: {
+                      images: _vm.page.data.images,
+                      image_type: _vm.page_name
+                    }
+                  })
+                : _c(
+                    "div",
+                    { staticClass: "row" },
+                    _vm._l(_vm.page.data.images, function(image) {
+                      return _c("div", { staticClass: "col-sm-2" }, [
+                        _c("img", {
+                          directives: [{ name: "img", rawName: "v-img" }],
+                          staticClass: "img-fluid",
+                          attrs: { src: image.url, alt: "" }
+                        })
+                      ])
                     })
-                  ])
-                })
-              )
-        ],
-        1
-      )
-    ]),
+                  )
+            ],
+            1
+          )
+        ])
+      : _vm._e(),
     _vm._v(" "),
-    _c("div", { staticClass: "row p-3" }, [
-      _c(
-        "div",
-        { staticClass: "col" },
-        [
-          _vm._m(3),
-          _vm._v(" "),
-          _vm.editing
-            ? _c("image-upload", {
-                staticClass: "pb-2",
-                attrs: {
-                  image_type: _vm.page_name + "_fb",
-                  image: _vm.page.data.og_image
-                },
-                on: { updated: _vm.updateOgImage, deleted: _vm.deleteOgImage }
-              })
-            : _c("div", { staticClass: "row" }, [
-                _vm.page.data.og_image
-                  ? _c("div", { staticClass: "col-sm-3" }, [
-                      _c("img", {
-                        directives: [{ name: "img", rawName: "v-img" }],
-                        staticClass: "img-fluid",
-                        attrs: { src: _vm.page.data.og_image.url, alt: "" }
-                      })
-                    ])
-                  : _vm._e()
-              ])
-        ],
-        1
-      )
-    ])
+    _vm.editing || _vm.page.data.og_image
+      ? _c("div", { staticClass: "row p-3" }, [
+          _c(
+            "div",
+            { staticClass: "col" },
+            [
+              _vm._m(3),
+              _vm._v(" "),
+              _vm.editing
+                ? _c("image-upload", {
+                    staticClass: "pb-2",
+                    attrs: {
+                      image_type: _vm.page_name + "_fb",
+                      image: _vm.page.data.og_image
+                    },
+                    on: {
+                      updated: _vm.updateOgImage,
+                      deleted: _vm.deleteOgImage
+                    }
+                  })
+                : _c("div", { staticClass: "row" }, [
+                    _vm.page.data.og_image
+                      ? _c("div", { staticClass: "col-sm-2" }, [
+                          _c("img", {
+                            directives: [{ name: "img", rawName: "v-img" }],
+                            staticClass: "img-fluid",
+                            attrs: { src: _vm.page.data.og_image.url, alt: "" }
+                          })
+                        ])
+                      : _vm._e()
+                  ])
+            ],
+            1
+          )
+        ])
+      : _vm._e()
   ])
 }
 var staticRenderFns = [
@@ -69222,7 +69263,11 @@ var render = function() {
               _vm._v(" "),
               _c("el-date-picker", {
                 staticClass: "pb-2",
-                attrs: { type: "date", placeholder: "" },
+                attrs: {
+                  type: "date",
+                  placeholder: "",
+                  "value-format": "yyyy-MM-dd"
+                },
                 model: {
                   value: _vm.item.starts_at,
                   callback: function($$v) {
@@ -69244,7 +69289,11 @@ var render = function() {
               _vm._v(" "),
               _c("el-date-picker", {
                 staticClass: "pb-2",
-                attrs: { type: "date", placeholder: "" },
+                attrs: {
+                  type: "date",
+                  placeholder: "",
+                  "value-format": "yyyy-MM-dd"
+                },
                 model: {
                   value: _vm.item.ends_at,
                   callback: function($$v) {
@@ -69607,6 +69656,12 @@ var render = function() {
     [
       _c("div", { staticClass: "row p-3" }, [
         _c("div", { staticClass: "col" }, [
+          _c("div", { staticClass: "float-left" }, [
+            _vm.status === "editing"
+              ? _c("h2", [_vm._v("pridėti naują")])
+              : _vm._e()
+          ]),
+          _vm._v(" "),
           _c("div", { staticClass: "float-right" }, [
             _vm.status === "index"
               ? _c(
@@ -89893,21 +89948,20 @@ Vue.component('vue-table', __webpack_require__("./resources/assets/js/components
 Vue.component('image-upload', __webpack_require__("./resources/assets/js/components/elements/image-upload.vue"));
 Vue.component('multiple-image-upload', __webpack_require__("./resources/assets/js/components/elements/multiple-image-upload.vue"));
 
-var app = new Vue({
-  el: '#app',
-  data: function data() {
-    return {
-      navbar_active: false
-    };
-  },
+// const app = new Vue({
+//     el: '#app',
+//     data() {
+//     	return {
+//     		navbar_active: false
+//     	}
+//     },
 
-
-  methods: {
-    toggleNavbar: function toggleNavbar() {
-      this.navbar_active = !this.navbar_active;
-    }
-  }
-});
+//     methods: {
+//     	toggleNavbar() {
+//     		this.navbar_active = !this.navbar_active
+//     	}
+//     }
+// });
 
 /***/ }),
 

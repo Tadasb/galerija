@@ -2,6 +2,34 @@ navbar {
     display: flex;
 }
 
+h1, h2, h3, h4, h5 {
+    font-weight: bold!important;
+}
+
+h1 {
+    font-size: 2em!important;
+}
+
+h2 {
+    font-size: 1.5em!important;
+}
+
+h3 {
+    font-size: 1.3em!important;
+}
+
+h4 {
+    font-size: 1.2em!important;
+}
+
+h5 {
+    font-size: 1.1em!important;
+}
+
+a.link {
+    color: inherit!important;
+}
+
 a.navbar-item, a.is-active {
     color: #666!important
 }
@@ -14,16 +42,20 @@ a.navbar-item, a.is-active {
 
 
 .navbar-brand a {
-    margin: 50px 0px 0px 25px;
+    margin: 30px 0px 0px 27px;
     padding: 0;
 }
 
 .navbar-burger {
-    margin: 65px 45px 0px 40px;
+    margin: 65px 2px 0px 40px;
+}
+
+.navbar-burger:hover {
+  background-color: rgba(0, 0, 0, 0)!important;
 }
 
 .menu {
-    padding: 0px 40px;
+    padding: 0px;
 }
 
 .menu-list li {
@@ -38,6 +70,7 @@ a.navbar-item, a.is-active {
     color: #666;
     text-decoration: none;
     margin-right: 120px;
+    padding-left: 0px!important;
 }
 
 .menu-link::after {
@@ -66,10 +99,6 @@ a.navbar-item, a.is-active {
 .menu-divider {
     content: "";
     height: 16px;
-}
-
-.contact-icons {
-    padding-left: 10px;
 }
 
 .contact-icons a {
@@ -106,4 +135,39 @@ button:focus,
     border: 1px solid #dedede;
     border-radius: 4px;
     padding: 0.4em;
+}
+
+.artist-image {
+    transition: all 0.2s ease-in-out;
+    filter: saturate(0.9);
+}
+
+.artist-image:hover {
+    transform: scale(1.02);
+    filter: saturate(1);
+    box-shadow: 0px 5px 5px 0px rgba(219,219,219,1);
+}
+
+.page-text {
+    background-color: #efefef;
+}
+
+.filter-item {
+    padding: 0.5em 1em;
+    margin-right: 2em;
+    border: 1px solid #222;
+    cursor: pointer;
+}
+
+.filter-item.active-filter {
+    background-color: #606060;
+    color: #fff;
+    border: 1px solid #606060;
+    transition: all 0.2s ease-in-out;
+}
+
+.filter-item:hover {
+    background-color: #606060;
+    border: 1px solid #606060;
+    color: #fff;
 }

@@ -2,14 +2,19 @@
     <div class="">
         <div class="row p-3">
             <div class="col">
-                <el-button v-if="!editing" class="float-right" type="primary" round size="medium" @click="editing = true">koreguoti</el-button>
-                <el-button v-else class="float-right" type="success" round size="medium" @click="savePage()">saugoti</el-button>
+                <div class="float-left">
+                    <h1>{{page_name}}</h1>
+                </div>
+                <div class="float-right">
+                    <el-button v-if="!editing" type="primary" round size="medium" @click="editing = true">koreguoti</el-button>
+                    <el-button v-else type="success" round size="medium" @click="savePage()">saugoti</el-button>
+                </div>
             </div>
         </div>
         <div class="row p-3">
             <div class="col">
                 <label for=""><strong>Tekstas</strong></label>
-                <medium-editor v-if="editing" :text='page.data.text' @edit="processEditOperation($event, page.data)"/>
+                <medium-editor v-if="editing" :text='page.data.text' @edit="processEditOperation($event, page.data)" placeholder="''"/>
                 <div v-else v-html="page.data.text"></div>
             </div>
         </div>
@@ -23,18 +28,18 @@
                 </div>
             </div>
         </div>
-        <div class="row p-3">
+        <div v-if="show_images || editing || page.data.images.length" class="row p-3">
             <div class="col">
                 <label for=""><strong>Nuotraukos</strong></label>
                 <multiple-image-upload v-if="editing" :images="page.data.images" :image_type="page_name"></multiple-image-upload>
                 <div v-else class="row">
-                    <div v-for="image in page.data.images" class="col-sm-3">
+                    <div v-for="image in page.data.images" class="col-sm-2">
                         <img class="img-fluid" v-img :src="image.url" alt="">
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row p-3">
+        <div v-if="editing || page.data.og_image" class="row p-3">
             <div class="col">
                 <label for=""><strong>FB nuotrauka (1200x630px)</strong></label>
                 <image-upload v-if="editing" class="pb-2" 
@@ -44,7 +49,7 @@
                     @deleted="deleteOgImage">
                 </image-upload>
                 <div v-else class="row">
-                    <div v-if="page.data.og_image" class="col-sm-3">
+                    <div v-if="page.data.og_image" class="col-sm-2">
                         <img class="img-fluid" v-img :src="page.data.og_image.url" alt="">
                     </div>
                 </div>
@@ -57,6 +62,10 @@ export default {
     props: {
         page_name: {
             type: String
+        },
+        show_images: {
+            type: Boolean,
+            default: true
         }
     },
 
@@ -108,6 +117,7 @@ export default {
         deleteOgImage() {
             this.page.data.og_image = null
         },
+
     },
 
     mounted() {

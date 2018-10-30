@@ -1,43 +1,53 @@
 <template>
     <el-tabs tab-position="top" style="padding-top: 30px" @tab-click="handleClick">
+        <el-tab-pane label="Pradinis">
+            <page :page_name="'pradinis'" :show_images="false"></page>
+        </el-tab-pane>
 
         <el-tab-pane label="Parodos">
-            <item-list :items_type="'parodos'" v-if="activeTabIndex == 0"/>
+            <page :page_name="'parodos'" :show_images="false"></page>
+            <item-list :page_name="'parodos'"/>
         </el-tab-pane>
 
         <el-tab-pane label="Menininkai">
-            <item-list :items_type="'menininkai'" v-if="activeTabIndex == 1"/>
+            <page :page_name="'menininkai'" :show_images="false"></page>
+            <item-list :page_name="'menininkai'"/>
         </el-tab-pane>
 
         <el-tab-pane label="Renginiai">
-            <item-list :items_type="'renginiai'" v-if="activeTabIndex == 2"/>
+            <page :page_name="'renginiai'" :show_images="false"></page>
+            <item-list :page_name="'renginiai'"/>
         </el-tab-pane>
 
         <el-tab-pane label="Dizainas">
-            <item-list :items_type="'dizainas'" v-if="activeTabIndex == 3"/>
+            <page :page_name="'dizainas'" :show_images="false"></page>
+            <item-list :page_name="'dizainas'"/>
         </el-tab-pane>
 
         <el-tab-pane label="Fotografija">
-            <page  v-if="activeTabIndex == 4" :page_name="'fotografija'"></page>
+            <page :page_name="'fotografija'"></page>
         </el-tab-pane>
 
         <el-tab-pane label="Dirbtuvės">
-            <item-list :items_type="'dirbtuves'" v-if="activeTabIndex == 5"/>
+            <page :page_name="'dirbtuves'" :show_images="false"></page>
+            <item-list :page_name="'dirbtuves'"/>
         </el-tab-pane>
 
         <el-tab-pane label="Meniu">
-            <page v-if="activeTabIndex == 6" :page_name="'meniu'"></page>
+            <page :page_name="'meniu'"></page>
         </el-tab-pane>
 
         <el-tab-pane label="Ledai">
-            <page v-if="activeTabIndex == 7" :page_name="'ledai'"></page>
+            <page :page_name="'ledai'"></page>
         </el-tab-pane>
 
         <el-tab-pane label="Nuoma">
-            <page v-if="activeTabIndex == 8" :page_name="'nuoma'"></page>
+            <page :page_name="'nuoma'"></page>
         </el-tab-pane>
 
-<!--         <el-tab-pane label="Kontaktai"><kontaktai  v-if="activeTabIndex == 9"></kontaktai></el-tab-pane> -->
+        <el-tab-pane label="Kontaktai">
+            <page :page_name="'kontaktai'" :show_images="false"></page>
+        </el-tab-pane>
         
     </el-tabs>
 </template>

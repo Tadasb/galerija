@@ -1,19 +1,18 @@
 @extends('layouts.main')
-
+@section('title', 'Fotografija')
 @section('content')
-<div class="row p-5">
-	<div class="col">
-		@if(isset($page) && $page->data)
-		{!!$page->data->text!!}
-
+<div class="row pb-4">
+	<div class="col text-center">
+		@if(isset($page->data) && $page->data->text)
+			<h2 class="p-3 page-text">{!!$page->data->text!!}</h2>
 		@endif
 	</div>
 </div>
 
-<div class="row p-3">
+<div class="row">
 
 	@foreach($page->data->images as $image)
-	<div class="col">
+	<div class="col-sm-6">
 		<img v-img:nuoma src="{{$image->url}}" alt="">
 	</div>
 	@endforeach

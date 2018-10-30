@@ -40,17 +40,17 @@ Vue.component('vue-table', require('./components/elements/table.vue'));
 Vue.component('image-upload', require('./components/elements/image-upload.vue'));
 Vue.component('multiple-image-upload', require('./components/elements/multiple-image-upload.vue'));
 
-const app = new Vue({
-    el: '#app',
-    data() {
-    	return {
-    		navbar_active: false
-    	}
-    },
+// const app = new Vue({
+//     el: '#app',
+//     data() {
+//     	return {
+//     		navbar_active: false
+//     	}
+//     },
 
-    methods: {
-    	toggleNavbar() {
-    		this.navbar_active = !this.navbar_active
-    	}
-    }
-});
+//     methods: {
+//     	toggleNavbar() {
+//     		this.navbar_active = !this.navbar_active
+//     	}
+//     }
+// });

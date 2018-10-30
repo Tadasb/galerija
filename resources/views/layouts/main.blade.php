@@ -4,8 +4,15 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>Portfolio Galerija</title>
+        <meta name="robots" content="index,follow">
+        <meta name="description" content="{{data_get($page, 'short_description')}}">
+        <title>@yield('title') - Portfolio Galerija</title>
         <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+        <meta property="og:site_name" content="Portfolio galerija">
+        <meta property="og:url" content="{{Request::url()}}">
+        <meta property="og:title" content="@yield('title')">
+        <meta property="og:image" content="{{data_get($page, 'data.og_image.url')}}">
+        @yield('meta')
     </head>
     <body>
         <div class="app" id="app">
@@ -15,17 +22,17 @@
                         <img src="/storage/portfolio-logo.svg" alt="Portfolio galerija">
                     </a>
 
-                    <div style="position: absolute; right: 3em;" class="navbar-burger is-hidden-tablet" :class="{'is-active' : navbar_active}" @click="toggleNavbar()">
+                    <div style="position: absolute; right: 20px;" class="navbar-burger is-hidden-tablet" id="hamburger" onclick="document.getElementById('hamburger').classList.toggle('is-active'); document.getElementById('mobile-navigation').classList.toggle('is-active');">
                         <span></span>
                         <span></span>
                         <span></span>
                     </div>
                     <br>
 
-                    <img class="is-inline is-invisible-mobile" style="margin-top: 8em; margin-right: 3em; position: absolute; right: 3em;"src="/storage/esi-sukurtas-kad-kurtum.svg" alt="esi sukurtas, kad kurtum">
+                    <img class="d-none d-md-inline" style="margin-top: 116px; position: absolute; right: 37px;"src="/storage/esi-sukurtas-kad-kurtum.svg" alt="esi sukurtas, kad kurtum">
 
                 </div>
-                <div class="navbar-menu is-hidden-tablet is-hidden-desktop is-hidden-widescreen is-hidden-fullhd" :class="{'is-active' : navbar_active}">
+                <div class="navbar-menu is-hidden-tablet is-hidden-desktop is-hidden-widescreen is-hidden-fullhd" id="mobile-navigation">
                     <div class="navbar-start" style="text-align: center">
                         <a href="/parodos" class="navbar-item @if(Request::is('parodos') || Request::is('parodos/*')) is-active @endif">PARODOS</a>
                         <a href="/menininkai" class="navbar-item @if(Request::is('menininkai') || Request::is('menininkai/*')) is-active @endif">MENININKAI</a>
@@ -52,9 +59,9 @@
                     </div>
                 </div>
             </nav>
-            <section class="section">
-                <div class="columns">
-                    <div class="column is-4-tablet is-3-desktop is-3-widescreen is-3-fullhd is-hidden-mobile">
+            <section class="" style="margin: 28px 40px;">
+                <div class="row">
+                    <div class="d-none d-md-block col-md-4 col-lg-3">
                         <aside class="menu">
                           <ul class="menu-list">
                             <li>
@@ -121,10 +128,9 @@
                         @endauth
                         </aside>
                     </div>
-                    <div class="column is-7-tablet is-8-desktop is-8-widescreen is-8-fullhd ">
+                    <div class="col-12 col-md-8 col-lg-9">
                         @yield('content')
                     </div>
-                    <div class="column is-1"></div>
                 </div>
             </section>
         </div>
