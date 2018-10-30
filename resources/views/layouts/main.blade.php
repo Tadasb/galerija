@@ -5,13 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="robots" content="index,follow">
-        <meta name="description" content="{{data_get($page, 'short_description')}}">
         <title>@yield('title') - Portfolio Galerija</title>
         <link href="{{ mix('css/app.css') }}" rel="stylesheet">
         <meta property="og:site_name" content="Portfolio galerija">
         <meta property="og:url" content="{{Request::url()}}">
         <meta property="og:title" content="@yield('title')">
+        @if(isset($page))
         <meta property="og:image" content="{{data_get($page, 'data.og_image.url')}}">
+        <meta name="description" content="{{data_get($page, 'short_description')}}">
+        @endif
         @yield('meta')
     </head>
     <body>

@@ -37,5 +37,11 @@
             </section>
         </div>
         <script src="{!! mix('js/app.js') !!}" type="text/javascript"></script>
+        <script>
+            const app = new Vue({
+                el: '#app',
+            });
+
+        </script>
     </body>
 </html>
