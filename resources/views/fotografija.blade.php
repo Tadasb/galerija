@@ -12,7 +12,7 @@
 <div class="row">
 
 	@foreach($page->data->images as $image)
-	<div class="col-sm-6">
+	<div class="col-sm-4">
 		<img v-img:nuoma src="{{$image->url}}" alt="">
 	</div>
 	@endforeach

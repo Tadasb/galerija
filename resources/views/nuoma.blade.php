@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'Nuoma')
+@section('title', 'Fotografija')
 @section('content')
 <div class="row pb-4">
 	<div class="col text-center">
@@ -12,7 +12,7 @@
 <div class="row">
 
 	@foreach($page->data->images as $image)
-	<div class="col-sm-6">
+	<div class="col-sm-4">
 		<img v-img:nuoma src="{{$image->url}}" alt="">
 	</div>
 	@endforeach

@@ -8,7 +8,7 @@
 		</div>
 	</div>
 
-	<div class="row pb-4">
+	<div v-cloak v-if="items.length" class="row pb-4">
 		<div class="col d-flex filter">
 			<div class="filter-item" :class="{'active-filter' : !filter }" @click="clearFilter()">visos</div>
 			<div :class="{'active-filter' : filter === category }" v-cloak v-for="category in Object.keys(categories)" class="filter-item" @click="setFilter(category)">@{{category}}</div>

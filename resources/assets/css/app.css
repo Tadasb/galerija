@@ -157,13 +157,13 @@ button:focus,
     margin-right: 2em;
     border: 1px solid #222;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
 
 .filter-item.active-filter {
     background-color: #606060;
     color: #fff;
     border: 1px solid #606060;
-    transition: all 0.2s ease-in-out;
 }
 
 .filter-item:hover {
