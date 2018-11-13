@@ -171,3 +171,7 @@ button:focus,
     border: 1px solid #606060;
     color: #fff;
 }
+
+.filterable-item {
+    transition: all 1s ease-in-out;
+}

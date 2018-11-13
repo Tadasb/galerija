@@ -10,10 +10,11 @@
 		</div>
 	</div>
 	<div class="col-sm-6">
-		@if($menininkas->data->images[0])
+		@if(data_get($menininkas, 'data.images.0'))
 		<img class="img-fluid" src="{{$menininkas->data->images[0]->url}}" alt="">
 		@endif
 	</div>
 </div>
 
 @endsection
+

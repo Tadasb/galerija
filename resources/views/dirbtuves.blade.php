@@ -15,8 +15,8 @@
 		</div>
 	</div>
 	<div v-cloak v-if="filter" class="row">
-		<div v-for="item in filtered" class="col-sm-3">
-			<a class="link" :href="'/dirbtuves/' + item.url">
+		<div v-for="(item, i) in filtered" class="col-sm-3" :key="i">
+			<a class="link filterable-item" :href="'/dirbtuves/' + item.url">
 				<img v-if="item.data.images" class="img-fluid" :src="item.data.images[0].url" alt="">
 				@{{item.name}}
 			</a>
@@ -26,7 +26,7 @@
 		@foreach($dirbtuves as $dirbtuve)
 		<div class="col-sm-3">
 			<a class="link" href="/dirbtuves/{{$dirbtuve->url}}">
-				@if($dirbtuve->data->images[0])
+				@if(data_get($dirbtuve, 'data.images.0'))
 				<img class="img-fluid" src="{{$dirbtuve->data->images[0]->url}}" alt="">
 				@endif
 				{!!data_get($dirbtuve, 'name')!!}

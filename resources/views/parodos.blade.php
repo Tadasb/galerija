@@ -1,39 +1,92 @@
 @extends('layouts.main')
 @section('title', 'Parodos')
 @section('content')
-
-{{-- @foreach($parodos as $paroda)
-	<div class="columns">
-		<div class="column ">
-			<h1 class="title is-8-tablet is-9-desktop is-10-fullhd">{{ $paroda->name ?? ''}}</h1>
-			<h2 class="subtitle is-5">{{ $paroda->short_description ?? ''}}</h2>
-		</div>
-		<div class="column is-4-tablet is-3-desktop is-2-fullhd">
-		    <div class="has-text-right">
-	    		<h3 class="title is-5">
-	    			{{$paroda->starts_at ?? ''}} /
-	    		</h3>
-		    </div>
-		    <div class="has-text-right">
-		    	<h3 class="title is-5">
-				    {{$paroda->ends_at?? ''}}
-				</h3>
-		    </div>
+<div id="parodos">
+	<div class="row pb-4">
+		<div class="col">
+			<div>{!!data_get($page, 'data.text')!!}</div>
 		</div>
 	</div>
 
-    <el-carousel indicator-position="none">
-    	@foreach($paroda->data->images as $image)
-      	<el-carousel-item>
-        	<img class="image" src="{{$image->url}}" alt="">
-      	</el-carousel-item>
-      	@endforeach
-    </el-carousel>
-	
-	<p class="content is-medium">
-		{{ $paroda->description ?? ''}}
-	</p>
+	<div v-cloak v-if="items.length" class="row pb-4">
+		<div class="col d-flex filter">
+			<div class="filter-item" :class="{'active-filter' : !filter }" @click="clearFilter()">visos</div>
+			<div :class="{'active-filter' : filter === category }" v-cloak v-for="category in Object.keys(categories)" class="filter-item" @click="setFilter(category)">@{{category}}</div>
+		</div>
+	</div>
+	<div v-cloak v-if="filter" class="row">
+		<div v-for="(item, i) in filtered" class="col-sm-3" :key="i">
+			<a class="link filterable-item" :href="'/parodos/' + item.url">
+				<img v-if="item.data.images" class="img-fluid" :src="item.data.images[0].url" alt="">
+				@{{item.name}}
+			</a>
+		</div>
+	</div>
+	<div v-else class="row">
+		@foreach($parodos as $paroda)
+		<div class="col-sm-3">
+			<a class="link" href="/parodos/{{$paroda->url}}">
+				@if(data_get($paroda, 'data.images.0'))
+				<img class="img-fluid" src="{{$paroda->data->images[0]->url}}" alt="">
+				@endif
+				{!!data_get($paroda, 'name')!!}
+			</a>
+		</div>
+		@endforeach
+	</div>
+</div>
+@endsection
 
-@endforeach --}}
+@section('scripts')
+<script>
+	new Vue({
+		el: '#parodos',
+		data: {
+			items: {!!$parodos!!},
+			filter: null
+		},
 
+		methods: {
+			setFilter(category) {
+				this.filtering = true
+				this.filter = category
+			},
+
+			clearFilter() {
+				this.filtering = false
+				this.filter = null
+			}
+		},
+
+		mounted() {
+
+		},
+
+		computed: {
+	        categories() {
+	            let categories = {}
+	            this.items.forEach(item => {
+	                if(item.category) {
+	                    if(!categories[item.category]) {
+	                        categories[item.category] = []
+	                    }
+
+	                    if(item.sub_category && categories[item.category].indexOf(item.sub_category) < 0) {
+	                        categories[item.category].push(item.sub_category)
+	                    }
+	                }
+	            })
+
+	            return categories
+	        },
+
+	        filtered() {
+	        	if(this.filter) {
+		        	return this.items.filter(item => item.category === this.filter)
+	        	}
+	        	else return this.items
+	        }
+		}
+	})
+</script>
 @endsection

@@ -3249,10 +3249,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         onFileChange: function onFileChange(event) {
+            var _this = this;
+
             this.status = 'loading';
             var files = event.target.files || event.dataTransfer.files;
-            if (!files.length) return;
-            this.createImage(files[0]);
+            if (!files.length) {
+                return;
+            }
+
+            Array.from(files).forEach(function (file) {
+                return _this.createImage(file);
+            });
         },
         createImage: function createImage(file) {
             var image = new Image();
@@ -69529,7 +69536,11 @@ var render = function() {
               _vm._v(" "),
               _c("input", {
                 staticClass: "file-input",
-                attrs: { type: "file" },
+                attrs: {
+                  type: "file",
+                  accept: ".jpg,.jpeg,.png",
+                  multiple: ""
+                },
                 on: {
                   change: function($event) {
                     _vm.onFileChange($event)
@@ -69656,11 +69667,7 @@ var render = function() {
     [
       _c("div", { staticClass: "row p-3" }, [
         _c("div", { staticClass: "col" }, [
-          _c("div", { staticClass: "float-left" }, [
-            _vm.status === "editing"
-              ? _c("h2", [_vm._v("pridėti naują")])
-              : _vm._e()
-          ]),
+          _c("div", { staticClass: "float-left" }),
           _vm._v(" "),
           _c("div", { staticClass: "float-right" }, [
             _vm.status === "index"
@@ -89947,21 +89954,6 @@ Vue.component('item', __webpack_require__("./resources/assets/js/components/item
 Vue.component('vue-table', __webpack_require__("./resources/assets/js/components/elements/table.vue"));
 Vue.component('image-upload', __webpack_require__("./resources/assets/js/components/elements/image-upload.vue"));
 Vue.component('multiple-image-upload', __webpack_require__("./resources/assets/js/components/elements/multiple-image-upload.vue"));
-
-// const app = new Vue({
-//     el: '#app',
-//     data() {
-//     	return {
-//     		navbar_active: false
-//     	}
-//     },
-
-//     methods: {
-//     	toggleNavbar() {
-//     		this.navbar_active = !this.navbar_active
-//     	}
-//     }
-// });
 
 /***/ }),
 

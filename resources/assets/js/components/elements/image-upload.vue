@@ -5,7 +5,7 @@
                 <div class="image-upload__placeholder p-2">
                     <small>+ įkelti</small>
                 </div>
-                <input class="file-input" type="file" @change="onFileChange($event)">
+                <input class="file-input" type="file" accept=".jpg,.jpeg,.png" multiple @change="onFileChange($event)">
             </label>
         </div>
 
@@ -45,9 +45,11 @@
             onFileChange(event) {
                 this.status = 'loading'
                 var files = event.target.files || event.dataTransfer.files;
-                if (!files.length)
-                    return;
-                this.createImage(files[0]);
+                if (!files.length) {
+                    return
+                }
+
+                Array.from(files).forEach(file => this.createImage(file))
             },
 
             createImage(file) {

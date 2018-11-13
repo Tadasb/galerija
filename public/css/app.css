@@ -5120,6 +5120,11 @@ button:focus,
     background-color: #606060;
     border: 1px solid #606060;
     color: #fff;
+}
+
+.filterable-item {
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
 }/*! bulma.io v0.6.2 | MIT License | github.com/jgthms/bulma */
 
 @-webkit-keyframes spinAround {

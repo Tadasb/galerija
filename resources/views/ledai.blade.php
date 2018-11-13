@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'Fotografija')
+@section('title', 'Ledai')
 @section('content')
 <div class="row pb-4">
 	<div class="col text-center">
@@ -17,4 +17,8 @@
 	</div>
 	@endforeach
 </div>
+@endsection
+
+@section('scripts')
+@include('layouts.vue')
 @endsection

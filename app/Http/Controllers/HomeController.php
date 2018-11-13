@@ -29,6 +29,13 @@ class HomeController extends Controller
         return view('parodos', compact('parodos', 'page'));
     }
 
+    public function paroda($url)
+    {
+        $paroda = Item::where('type', 'parodos')->where('url', $url)->first();
+
+        return view('paroda', compact('paroda'));
+    }
+
     public function menininkai()
     {
         $menininkai = Item::where('type', 'menininkai')->get();
@@ -46,10 +53,17 @@ class HomeController extends Controller
 
     public function renginiai()
     {
-        $renginiai = Item::where('type', 'renginys')->get();
+        $renginiai = Item::where('type', 'renginiai')->get();
         $page = Page::firstOrCreate(['name' => 'renginiai']);
 
         return view('renginiai', compact('renginiai', 'page'));
+    }
+
+    public function renginys($url)
+    {
+        $renginys = Item::where('type', 'renginiai')->where('url', $url)->first();
+
+        return view('renginys', compact('renginys'));
     }
 
     public function dizainas()
@@ -73,6 +87,13 @@ class HomeController extends Controller
         $page = Page::firstOrCreate(['name' => 'dirbtuves']);
 
         return view('dirbtuves', compact('dirbtuves', 'page'));
+    }
+
+    public function dirbtuve($url)
+    {
+        $dirbtuve = Item::where('type', 'dirbtuves')->where('url', $url)->first();
+
+        return view('dirbtuve', compact('dirbtuve'));
     }
 
     public function meniu()

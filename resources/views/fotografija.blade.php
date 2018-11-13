@@ -18,3 +18,7 @@
 	@endforeach
 </div>
 @endsection
+
+@section('scripts')
+@include('layouts.vue')
+@endsection

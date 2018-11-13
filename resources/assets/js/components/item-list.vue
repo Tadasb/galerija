@@ -3,7 +3,7 @@
         <div class="row p-3">
             <div class="col">
                 <div class="float-left">
-                    <h2 v-if="status === 'editing'">pridėti naują</h2>
+            <!--         <h2 v-if="status === 'editing'">pridėti naują</h2> -->
                 </div>
                 <div class="float-right">
                     <div v-if="status === 'index'">
