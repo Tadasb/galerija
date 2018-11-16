@@ -13,6 +13,7 @@
         @if(isset($page))
         <meta property="og:image" content="{{data_get($page, 'data.og_image.url')}}">
         <meta name="description" content="{{data_get($page, 'short_description')}}">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,400&amp;subset=latin-ext" rel="stylesheet">
         @endif
         @yield('meta')
     </head>

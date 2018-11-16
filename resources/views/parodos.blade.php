@@ -3,7 +3,7 @@
 @section('content')
 <div id="parodos">
 	<div class="row pb-4">
-		<div class="col">
+		<div class="col page-text">
 			<div>{!!data_get($page, 'data.text')!!}</div>
 		</div>
 	</div>

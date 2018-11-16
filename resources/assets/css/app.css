@@ -1,3 +1,10 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+
 navbar {
     display: flex;
 }
@@ -149,7 +156,11 @@ button:focus,
 }
 
 .page-text {
-    background-color: #efefef;
+    font-size: 1.2em;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200!important;
+    letter-spacing: 1px;
+
 }
 
 .filter-item {

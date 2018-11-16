@@ -4,7 +4,7 @@
 <div class="row pb-4">
 	<div class="col text-center">
 		@if(isset($page->data) && $page->data->text)
-			<h2 class="p-3 page-text">{!!$page->data->text!!}</h2>
+			<div class="p-3 page-text">{!!$page->data->text!!}</div>
 		@endif
 	</div>
 </div>
