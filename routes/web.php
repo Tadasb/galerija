@@ -26,7 +26,8 @@ Route::get('/menininkai/{url}', 'HomeController@menininkas')->name('menininkas')
 Route::get('/renginiai', 'HomeController@renginiai')->name('renginiai');
 Route::get('/renginiai/{url}', 'HomeController@renginys')->name('renginys');
 
-Route::get('/dizainas', 'HomeController@dizainas')->name('dizainas');
+Route::get('/dizainas', 'HomeController@dizainai')->name('dizainai');
+Route::get('/dizainas/{url}', 'HomeController@dizainas')->name('dizainas');
 Route::get('/fotografija', 'HomeController@fotografija')->name('fotografija');
 
 Route::get('/dirbtuves', 'HomeController@dirbtuves')->name('dirbtuves');

@@ -2,9 +2,9 @@
 @section('title', 'Dirbtuvės')
 @section('content')
 <div id="dirbtuves">
-	<div class="row pb-4">
+	<div class="row py-4">
 		<div class="col">
-			<div>{!!data_get($page, 'data.text')!!}</div>
+			<div class="page-text">{!!data_get($page, 'data.text')!!}</div>
 		</div>
 	</div>
 

@@ -2,7 +2,7 @@
 @section('title'){{$dirbtuve->name}}@endsection
 @section('content')
 
-<div class="row">
+<div class="row py-4">
 	<div class="col-sm-6">
 		<h1>{{$dirbtuve->name}}</h1>
 		<div class="py-4">

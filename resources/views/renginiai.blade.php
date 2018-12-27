@@ -2,9 +2,9 @@
 @section('title', 'Renginiai')
 @section('content')
 <div id="renginiai">
-	<div class="row pb-4">
-		<div class="col page-text">
-			<div>{!!data_get($page, 'data.text')!!}</div>
+	<div class="row py-4">
+		<div class="col">
+			<div class="page-text">{!!data_get($page, 'data.text')!!}</div>
 		</div>
 	</div>
 

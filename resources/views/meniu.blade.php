@@ -1,10 +1,10 @@
 @extends('layouts.main')
 @section('title', 'Meniu')
 @section('content')
-<div class="row pb-4">
+<div class="row py-4">
 	<div class="col">
 		@if(isset($page->data) && $page->data->text)
-			<div class="page-text py-4">{!!$page->data->text!!}</div>
+			<div class="page-text">{!!$page->data->text!!}</div>
 		@endif
 	</div>
 </div>

@@ -1,7 +1,7 @@
 @extends('layouts.main')
-@section('title', 'Parodos')
+@section('title', 'Dizainas')
 @section('content')
-<div id="parodos">
+<div id="dizainas">
 	<div class="row py-4">
 		<div class="col">
 			<div class="page-text">{!!data_get($page, 'data.text')!!}</div>
@@ -16,20 +16,20 @@
 	</div>
 	<div v-cloak v-if="filter" class="row">
 		<div v-for="(item, i) in filtered" class="col-sm-3" :key="i">
-			<a class="link filterable-item" :href="'/parodos/' + item.url">
+			<a class="link filterable-item" :href="'/dizainai/' + item.url">
 				<img v-if="item.data.images" class="img-fluid" :src="item.data.images[0].url" alt="">
 				@{{item.name}}
 			</a>
 		</div>
 	</div>
 	<div v-else class="row">
-		@foreach($parodos as $paroda)
+		@foreach($dizainai as $dizainas)
 		<div class="col-sm-3">
-			<a class="link" href="/parodos/{{$paroda->url}}">
-				@if(data_get($paroda, 'data.images.0'))
-				<img class="img-fluid" src="{{$paroda->data->images[0]->url}}" alt="">
+			<a class="link" href="/dizainas/{{$dizainas->url}}">
+				@if(data_get($dizainas, 'data.images.0'))
+				<img class="img-fluid" src="{{$dizainas->data->images[0]->url}}" alt="">
 				@endif
-				{!!data_get($paroda, 'name')!!}
+				{!!data_get($dizainas, 'name')!!}
 			</a>
 		</div>
 		@endforeach
@@ -40,9 +40,9 @@
 @section('scripts')
 <script>
 	new Vue({
-		el: '#parodos',
+		el: '#dizainai',
 		data: {
-			items: {!!$parodos!!},
+			items: {!!$dizainai!!},
 			filter: null
 		},
 

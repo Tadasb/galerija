@@ -66,12 +66,19 @@ class HomeController extends Controller
         return view('renginys', compact('renginys'));
     }
 
-    public function dizainas()
+    public function dizainai()
     {
-        $dizainas = Item::where('type', 'dizainas')->get();
+        $dizainai = Item::where('type', 'dizainas')->get();
         $page = Page::firstOrCreate(['name' => 'dizainas']);
 
-        return view('dizainas', compact('dizainas', 'page'));
+        return view('dizainai', compact('dizainai', 'page'));
+    }
+
+    public function dizainas($url)
+    {
+        $dizainas = Item::where('type', 'dizainas')->where('url', $url)->first();
+
+        return view('dizainas', compact('dizainas'));
     }
 
     public function fotografija()

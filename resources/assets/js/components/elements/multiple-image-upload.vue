@@ -1,7 +1,7 @@
 <template>
 		<div class="multiple-image-upload__images">
-			<draggable :list="images" class="d-flex flex-wrap pb-2">
-			    <image-upload v-for="(image, i) in images" 
+			<draggable :list="images" class="d-flex flex-wrap">
+			    <image-upload class="pb-4" v-for="(image, i) in images" 
 			    :image_type="image_type" 
 			    :image="image" 
 			    @updated="updateImage(image)" 
