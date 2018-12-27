@@ -40,7 +40,7 @@
 @section('scripts')
 <script>
 	new Vue({
-		el: '#dizainai',
+		el: '#dizainas',
 		data: {
 			items: {!!$dizainai!!},
 			filter: null

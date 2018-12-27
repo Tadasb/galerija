@@ -4938,7 +4938,7 @@ a.text-dark:focus {
 }
 
 body {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Nunito', sans-serif!important;
     font-weight: 400;
     letter-spacing: 1px;
 }
@@ -5107,9 +5107,8 @@ button:focus,
 .page-text {
     font-size: 1.2em;
     font-family: 'Nunito', sans-serif;
-    font-weight: 200!important;
+    font-weight: 400!important;
     letter-spacing: 1px;
-
 }
 
 .filter-item {
