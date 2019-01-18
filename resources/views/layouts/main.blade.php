@@ -40,7 +40,7 @@
                         <a href="/parodos" class="navbar-item @if(Request::is('parodos') || Request::is('parodos/*')) is-active @endif">PARODOS</a>
                         <a href="/menininkai" class="navbar-item @if(Request::is('menininkai') || Request::is('menininkai/*')) is-active @endif">MENININKAI</a>
                         <a href="/renginiai" class="navbar-item @if(Request::is('renginiai') || Request::is('renginiai/*')) is-active @endif">RENGINIAI</a>
-{{--                         <a href="/dizainas" class="navbar-item @if(Request::is('dizainas') || Request::is('dizainas/*')) is-active @endif">DIZAINAS</a> --}}
+                        <a href="/dizainas" class="navbar-item @if(Request::is('dizainas') || Request::is('dizainas/*')) is-active @endif">DIZAINAS</a>
                         <a href="/fotografija" class="navbar-item @if(Request::is('fotografija') || Request::is('fotografija/*')) is-active @endif">FOTOGRAFIJA</a>
                         <a href="/dirbtuves" class="navbar-item @if(Request::is('dirbtuves') || Request::is('dirbtuves/*')) is-active @endif">DIRBTUVES</a>
                         <a href="/meniu" class="navbar-item @if(Request::is('menu') || Request::is('menu/*')) is-active @endif">MENIU</a>
