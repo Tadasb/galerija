@@ -2,9 +2,9 @@
 @section('title'){{$menininkas->name}}@endsection
 @section('content')
 
-<div class="row py-4">
+<div class="row">
 	<div class="col-sm-6">
-		<h1>{{$menininkas->name}}</h1>
+		<h1 class="m-0 p-0">{{$menininkas->name}}</h1>
 		<div>
 			{!!$menininkas->description!!}
 		</div>

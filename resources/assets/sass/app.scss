@@ -1,15 +1,10 @@
 
-@import "~bulma/sass/utilities/initial-variables";
+
 @import url("https://cdnjs.cloudflare.com/ajax/libs/medium-editor/5.22.1/css/medium-editor.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/medium-editor/5.22.1/css/themes/beagle.css");
 
-$navbar-item-img-max-height: 7rem;
-$menu-item-hover-background-color: none;
-$navbar-item-active-background-color: none;
-
-@import '~bulma/bulma';
 @import '../css/icons.css';
-@import '../css/bootstrap.css';
+@import '../css/esentials.css';
 @import '../css/app.css';
 
 // // Fonts

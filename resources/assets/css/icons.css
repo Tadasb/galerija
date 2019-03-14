@@ -12,7 +12,7 @@ Generated using nucleoapp.com
   font-style: normal;
 }
 /*------------------------
-  base class definition
+	base class definition
 -------------------------*/
 .port {
   display: inline-block;
@@ -110,6 +110,14 @@ Generated using nucleoapp.com
 /*------------------------
   rotated/flipped icons
 -------------------------*/
+.port-rotate-45 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0.5);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
 .port-rotate-90 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
   -webkit-transform: rotate(90deg);
@@ -151,7 +159,7 @@ Generated using nucleoapp.com
   transform: scale(1, -1);
 }
 /*------------------------
-  icons
+	icons
 -------------------------*/
 
 .port-phone-2::before {
@@ -176,5 +184,29 @@ Generated using nucleoapp.com
 
 .port-logo-messenger::before {
   content: "\ea09";
+}
+
+.port-d-add::before {
+  content: "\ea0a";
+}
+
+.port-open-to-close::before {
+  content: "\ea0b";
+}
+
+.port-i-add-2::before {
+  content: "\ea0c";
+}
+
+.port-i-add-1::before {
+  content: "\ea0d";
+}
+
+.port-e-add-1::before {
+  content: "\ea0e";
+}
+
+.port-e-add-2::before {
+  content: "\ea0f";
 }
 

@@ -14,7 +14,7 @@
         <div class="row p-3">
             <div class="col">
                 <label for=""><strong>Tekstas</strong></label>
-                <medium-editor v-if="editing" :text='page.data.text' @edit="processEditOperation($event, page.data)" placeholder="''"/>
+                <el-input v-if="editing" v-model="page.data.text" type="textarea" placeholder="tekstas"></el-input>
                 <div v-else v-html="page.data.text"></div>
             </div>
         </div>

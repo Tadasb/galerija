@@ -13,12 +13,52 @@
         @if(isset($page))
         <meta property="og:image" content="{{data_get($page, 'data.og_image.url')}}">
         <meta name="description" content="{{data_get($page, 'short_description')}}">
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,400&amp;subset=latin-ext" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
         @endif
         @yield('meta')
+        @yield('style')
     </head>
-    <body>
-        <div class="app" id="app">
+    <body style="background-color: #F5F1EC">
+        <div class="body" style="width: 100%; overflow:hidden;" id="app">
+            <div class="menu noselect">
+                <div class="mt-5" id="logo" >
+                    <a href="/">
+                    <img class="pr-5" src="/storage/portfolio-art-studio-cafe.svg" alt="Portfolio galerija" style="max-width: 100%"></a>
+                </div>
+                <div class="" >
+                    <i class="py-4 port port-d-add port-lg" onclick="document.getElementById('plus').classList.toggle('port-rotate-45'); document.getElementById('nav').classList.toggle('d-none'); document.getElementById('content').classList.toggle('d-none');" id="plus"></i>
+
+                    <div class="d-none menu-list pb-4" id="nav">
+                        <div><a href="/parodos" class="menu-link @if(Request::is('parodos') || Request::is('parodos/*')) active @endif">PARODOS</a></div>
+                        <div><a href="/menininkai" class="menu-link @if(Request::is('menininkai') || Request::is('menininkai/*')) active @endif">MENININKAI</a></div>
+                        <div><a href="/renginiai" class="menu-link @if(Request::is('renginiai') || Request::is('renginiai/*')) active @endif">RENGINIAI</a></div>
+                        <div><a href="/dizainas" class="menu-link @if(Request::is('dizainas') || Request::is('dizainas/*')) active @endif">DIZAINAS</a></div>
+                        <div><a href="/fotografija" class="menu-link @if(Request::is('fotografija') || Request::is('fotografija/*')) active @endif">FOTOGRAFIJA</a></div>
+                        <div><a href="/dirbtuves" class="menu-link @if(Request::is('dirbtuves') || Request::is('dirbtuves/*')) active @endif">DIRBTUVES</a></div>
+                        <div><a href="/meniu" class="menu-link @if(Request::is('meniu') || Request::is('menu/*')) active @endif">MENIU</a></div>
+                        <div><a href="/ledai" class="menu-link @if(Request::is('ledai') || Request::is('ledai/*')) active @endif">LEDAI</a></div>
+                        <div><a href="/nuoma" class="menu-link @if(Request::is('nuoma') || Request::is('nuoma/*')) active @endif">NUOMA</a></div>
+                        <div><a href="/kontaktai" class="menu-link @if(Request::is('kontaktai') || Request::is('kontaktai/*')) active @endif">KONTAKTAI</a></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content" id="content" style="text-align: center;">
+                @if(isset($page) && Request::is('index') == false)
+                    <div class="page-text ml-auto mr-auto px-3" style="max-width: 500px;">
+                        <div>
+                            {!!data_get($page, 'data.text')!!}
+                        </div>
+                    </div>
+                @endif
+
+                <div class="page">
+                    @yield('content')
+                </div>
+            </div>
+        </div>
+
+{{--         <div class="app" id="app">
             <nav class="navbar" role="navigation" aria-label="main navigation">
                 <div class="navbar-brand">
                     <a class="navbar-item" href="/" id="port-logo" style="justify-content: space-between;">
@@ -136,7 +176,7 @@
                     </div>
                 </div>
             </section>
-        </div>
+        </div> --}}
         <script src="{!! mix('js/app.js') !!}" type="text/javascript"></script>
         @yield('scripts')
     </body>

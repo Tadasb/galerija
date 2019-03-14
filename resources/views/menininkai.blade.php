@@ -1,29 +1,24 @@
 @extends('layouts.main')
 @section('title', 'Menininkai')
 @section('content')
-
-<div class="row py-4">
-	<div class="col">
-		@if(isset($page->data) && $page->data->text)
-			<div class="page-text">{!!$page->data->text!!}</div>
-		@endif
-	</div>
-</div>
-<div class="row">
-	@foreach($menininkai as $menininkas)
-	<div class="col-sm-4 pb-4">
-		<a class="link" href="/menininkai/{{$menininkas->url}}">
-			<div class="p-2">
+	<h1 class="py-3">Menininkai</h1>
+	<div class="items">
+		@foreach($menininkai as $menininkas)
+		<div class="px-4 item">
+			<a class="link no-underline item-link" href="/menininkai/{{$menininkas->url}}">
 				@if(data_get($menininkas, 'data.images.0'))
-				<img class="img-fluid rounded-circle artist-image" src="{{$menininkas->data->images[0]->url}}" alt="">
-				@endif
-				<div class="text-center">
-					<h2>{{$menininkas->name}}</h2>
+				<div>
+					<img class="img-fluid item-picture" src="{{$menininkas->data->images[0]->url}}" alt="" style="width: 100%;">
 				</div>
-			</div>
-		</a>
+				@endif
+				<div class="mb-4">
+					<div class="py-2 px-1 text-center">
+						{!!data_get($menininkas, 'name')!!}
+					</div>				
+				</div>
+			</a>
+		</div>
+		@endforeach
 	</div>
-	@endforeach
-</div>
 
 @endsection
